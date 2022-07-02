@@ -1,13 +1,11 @@
 import * as Styled from './styles.js'
-import { Heading } from '../../components/Heading/index.jsx'
-
-
+import { AsideMenuHeader } from '../../components/AsideMenuHeader'
 
 
 export const AsideMenu = () => {
     return (
         <Styled.Container>
-            <Heading as="h2">Categorias</Heading>
+            <AsideMenuHeader />
         </Styled.Container>
     )
 }

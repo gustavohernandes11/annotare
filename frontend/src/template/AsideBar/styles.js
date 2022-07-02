@@ -6,12 +6,10 @@ export const Container = styled.div`
         align-items: center;
         justify-content: space-between;
         flex-direction: column;
+        height: 100vh;
         background-color: ${theme.colors.backgroundSecondary};
         color: ${theme.colors.primary};
         padding: ${theme.spacings.xsmall};
-        padding-top: ${theme.spacings.medium};
-        padding-bottom: ${theme.spacings.xsmall};
-
-
+        padding-top: ${theme.spacings.xlarge};
     `}
 `;

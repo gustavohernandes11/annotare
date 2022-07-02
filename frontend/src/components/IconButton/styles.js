@@ -12,10 +12,11 @@ export const Container = styled.button`
     margin-bottom: ${theme.spacings.xsmall};
     border-radius: 5px;
     padding: 5px;
-    `}
     :hover {
         cursor: pointer;
+        color: ${theme.colors.secondary};
     }
+    `}
     > svg {
         width: 20px;
         height: 20px;
