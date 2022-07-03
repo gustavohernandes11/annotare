@@ -10,6 +10,7 @@ export const Heading = ({ as = 'h1', children }) => {
 }
 
 Heading.propTypes = {
-    children: P.node.isRequired
+    children: P.oneOfType(['string', 'number']).isRequired,
+    as: P.string
 }
 

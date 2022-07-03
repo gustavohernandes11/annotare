@@ -5,7 +5,6 @@ export const Container = styled.div`
         border: 1px solid ${theme.colors.border};
         background-color: ${theme.colors.backgroundTertiary};
         border-left: 2px solid ${color};
-        padding: ${theme.spacings.medium};
         color: ${theme.colors.primary};
         border-radius: 5px;
         min-height: 100px;

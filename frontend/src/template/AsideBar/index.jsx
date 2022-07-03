@@ -8,8 +8,9 @@ import Logo from '../../assets/imgs/logo.png'
 export const AsideBar = () => {
     return (
         <Styled.Container>
-            <img src={Logo} alt="Logo" />
             <span>
+            <img src={Logo} alt="Logo" />
+            <hr />
                 <IconButton><Heart title="Favorites" /></IconButton>
                 <IconButton><ListAlt title="All notes" /></IconButton>
             </span>
