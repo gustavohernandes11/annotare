@@ -1,14 +1,22 @@
+import { useContext } from 'react'
 import * as Styled from './styles.js'
 import P from 'prop-types'
 import { Card } from '../Card/index.jsx'
+import { GlobalContext } from '../../contexts/globalContext/GlobalContextProvider.jsx'
+
 
 export const ContentBoard = () => {
+    const [state, actions] = useContext(GlobalContext);
+
     return (
         <Styled.Container>
-            <Card color='yellow' heading="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in magna faucibus, dignissim quam vel, ullamcorper orci. Integer nec massa malesuada, fermentum diam vitae, fringilla ligula. Nullam feugiat quam augue, quis dictum justo bibendum vel. Nulla nisl urna, elementum eu odio at, accumsan maximus mi. Aenean eu ante efficitur, elementum urna nec, hendrerit nunc. Phasellus id maximus nisl. Maecenas euismod ipsum augue, quis dapibus ligula malesuada sed.</Card>
-            <Card color='yellow' heading="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in magna faucibus, dignissim quam vel, ullamcorper orci. Integer nec massa malesuada, fermentum diam vitae, fringilla ligula. Nullam feugiat quam augue, quis dictum justo bibendum vel. Nulla nisl urna, elementum eu odio at, accumsan maximus mi. Aenean eu ante efficitur, elementum urna nec, hendrerit nunc. Phasellus id maximus nisl. Maecenas euismod ipsum augue, quis dapibus ligula malesuada sed.</Card>
-            <Card heading="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in magna faucibus, dignissim quam vel, ullamcorper orci. Integer nec massa malesuada, fermentum diam vitae, fringilla ligula. Nullam feugiat quam augue, quis dictum justo bibendum vel. Nulla nisl urna, elementum eu odio at, accumsan maximus mi. Aenean eu ante efficitur, elementum urna nec, hendrerit nunc. Phasellus id maximus nisl. Maecenas euismod ipsum augue, quis dapibus ligula malesuada sed.</Card>
-            <Card heading="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in magna faucibus, dignissim quam vel, ullamcorper orci. Integer nec massa malesuada, fermentum diam vitae, fringilla ligula. Nullam feugiat quam augue, quis dictum justo bibendum vel. Nulla nisl urna, elementum eu odio at, accumsan maximus mi. Aenean eu ante efficitur, elementum urna nec, hendrerit nunc. Phasellus id maximus nisl. Maecenas euismod ipsum augue, quis dapibus ligula malesuada sed.</Card>
+            <Card heading="object state">
+                {JSON.stringify(state)}
+            </Card>
+            {state.annotations?.map(annotation => <Card key={annotation.id} heading={annotation.heading}>
+                {annotation.content}
+            </Card>)}
+  
         </Styled.Container>
     )
 }

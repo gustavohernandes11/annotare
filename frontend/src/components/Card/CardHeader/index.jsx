@@ -10,6 +10,6 @@ export const CardHeader = () => {
 }
 
 CardHeader.propTypes = {
-    children: P.node.isRequired
+    children: P.node
 }
 

@@ -8,6 +8,7 @@ export const Container = styled.div`
         color: ${theme.colors.primary};
         border-radius: 5px;
         min-height: 100px;
+        max-height: 400px;
     `}
     
 `;

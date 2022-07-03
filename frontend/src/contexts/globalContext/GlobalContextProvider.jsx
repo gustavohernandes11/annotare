@@ -5,21 +5,28 @@ import { mockData } from './mockData'
 export const GlobalContext = createContext()
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'INCREASE':
-            return alert('increase')
-
-        case 'DUPLICATE':
-            return alert('duplicate')
+        case 'SHUFFLE':
+            const newAnnotations = state.annotations
+            newAnnotations.sort(() => Math.random() - 0.5) 
+            return  {...state, newAnnotations}
 
         default:
-            return alert('default')
+            return {...state}
     }
 }
 
 export const GlobalContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, mockData)
+    
+    const buildActions = (dispatch) => {
+        return {
+            shuffle: () => { dispatch({ type: "SHUFFLE" }) },
+        }
+    }
+const actions = buildActions(dispatch)
+
     return (
-        <GlobalContext.Provider value={[state, dispatch]}>
+        <GlobalContext.Provider value={[state, actions]}>
             {children}
         </GlobalContext.Provider>
     )

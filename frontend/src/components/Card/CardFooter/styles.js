@@ -6,6 +6,7 @@ export const Container = styled.footer`
     padding:  ${theme.spacings.small} ${theme.spacings.medium};
     width: fit-content;
     margin-left: auto;
+    align-self: flex-end;
 
     `}
     

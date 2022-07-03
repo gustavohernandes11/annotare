@@ -4,7 +4,7 @@ import P from 'prop-types'
 import { GlobalContext } from '../../contexts/globalContext/GlobalContextProvider.jsx'
 
 export const LargeButton = ({ primary = false, children }) => {
-    const [state, dispatch] = useContext(GlobalContext);
+    const [state, actions] = useContext(GlobalContext);
 
     useEffect(() => {
         console.log(state)
@@ -13,7 +13,7 @@ export const LargeButton = ({ primary = false, children }) => {
 
     return (
         <Styled.Container>
-            <button onClick={() => dispatch({type: 'INCREASE'})} primary={primary}>
+            <button onClick={() => actions.shuffle()} primary={primary}>
                 {children}
             </button>
         </Styled.Container>
