@@ -10,6 +10,6 @@ export const Container = styled.div`
         background-color: ${theme.colors.backgroundSecondary};
         color: ${theme.colors.primary};
         padding: ${theme.spacings.xsmall};
-        padding-top: ${theme.spacings.xlarge};
+        padding-top: ${theme.spacings.large};
     `}
 `;

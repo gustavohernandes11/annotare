@@ -5,7 +5,9 @@ export const Header = styled.header`
         display: flex;
         flex-direction: row;
         justify-content: space-between ;
-        align-items: center ;
+        align-items: center;
+        margin-bottom: ${theme.spacings.medium};
+
     `}
     
 `;
