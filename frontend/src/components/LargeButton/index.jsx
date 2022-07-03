@@ -3,7 +3,7 @@ import * as Styled from './styles.js'
 import P from 'prop-types'
 import { DataContext } from '../../contexts/dataContext/DataContextProvider.jsx'
 
-export const LargeButton = ({ primary = "false", children }) => {
+export const LargeButton = ({ primary, children }) => {
     const [state, actions] = useContext(DataContext);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export const LargeButton = ({ primary = "false", children }) => {
 
     return (
         <Styled.Container>
-            <button onClick={() => actions.shuffle()} primary={primary}>
+            <button aria-label="large-button" onClick={() => actions.shuffle()} primary={primary}>
                 {children}
             </button>
         </Styled.Container>
@@ -21,6 +21,6 @@ export const LargeButton = ({ primary = "false", children }) => {
 }
 
 LargeButton.propTypes = {
-    children: P.node.isRequired
+    children: P.oneOfType([P.string, P.object, P.node]).isRequired
 }
 

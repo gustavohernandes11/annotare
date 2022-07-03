@@ -5,7 +5,7 @@ import { DataContext } from '../../contexts/dataContext/DataContextProvider.jsx'
 
 
 export const ContentBoard = () => {
-    const [state, actions] = useContext(DataContext);
+    const [state] = useContext(DataContext);
 
     return (
         <Styled.Container>

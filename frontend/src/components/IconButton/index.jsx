@@ -1,6 +1,6 @@
 import * as Styled from './styles.js'
 
-export const IconButton = ({ width = 35, heigth = 35, children }) => {
+export const IconButton = ({ children }) => {
     return (
         <Styled.Container>
             {children}
