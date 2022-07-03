@@ -8,7 +8,7 @@ export const Container = styled.div`
         padding: ${theme.spacings.medium};
         color: ${theme.colors.primary};
         border-radius: 5px;
-        min-height: 200px;
+        min-height: 100px;
     `}
     
 `;

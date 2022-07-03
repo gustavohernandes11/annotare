@@ -1,9 +1,9 @@
 import * as Styled from './styles.js'
 import P from 'prop-types'
 
-export const Category = ({children}) => {
+export const Category = ({children, color}) => {
     return (
-        <Styled.Container>
+        <Styled.Container color={color}>
             {children}
         </Styled.Container>
     )

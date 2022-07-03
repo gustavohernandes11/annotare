@@ -6,7 +6,7 @@ export const AsideMenu = () => {
     return (
         <Styled.Container>
             <AsideMenuHeader />
-            <Category>Lorem</Category>
+            <Category color='yellow'>Lorem</Category>
             <Category>Lorem ipsum</Category>
             <Category>Lorem</Category>
     
