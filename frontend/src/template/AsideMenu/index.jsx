@@ -2,14 +2,15 @@ import { useContext } from 'react'
 import * as Styled from './styles.js'
 import { AsideMenuHeader } from '../../components/AsideMenuHeader'
 import { Category } from '../../components/Category'
-import { GlobalContext } from '../../contexts/globalContext/GlobalContextProvider.jsx'
+import { DataContext } from '../../contexts/dataContext/DataContextProvider.jsx'
 
 export const AsideMenu = () => {
-    const [state, actions] = useContext(GlobalContext);
+    const [state, actions] = useContext(DataContext);
 
     return (
         <Styled.Container>
             <AsideMenuHeader />
+            <Category default selected color='grey' >All</Category>
             {state.categories?.map(category => <Category key={category.id} color={category.color}>{category.name}</Category>)}
     
         </Styled.Container>

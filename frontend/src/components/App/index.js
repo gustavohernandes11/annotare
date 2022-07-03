@@ -6,11 +6,11 @@ import { Theme } from '../../themes/ThemeProvider';
 import { AsideBar } from '../../template/AsideBar'
 import { AsideMenu } from '../../template/AsideMenu'
 import { Content } from '../../template/Content'
-import { GlobalContextProvider } from '../../contexts/globalContext/GlobalContextProvider.jsx';
+import { DataContextProvider } from '../../contexts/dataContext/DataContextProvider.jsx';
 
 function App() {
   return (
-    <GlobalContextProvider>
+    <DataContextProvider>
       <Theme>
         <div id="app">
           <Styled.Container>
@@ -20,7 +20,7 @@ function App() {
           </Styled.Container>
         </div>
       </Theme>
-    </GlobalContextProvider>
+    </DataContextProvider>
 
   );
 }

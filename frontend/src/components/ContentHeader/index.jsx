@@ -20,6 +20,6 @@ export const ContentHeader = () => {
 }
 
 ContentHeader.propTypes = {
-    children: P.node.isRequired
+    children: P.node
 }
 

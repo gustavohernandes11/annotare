@@ -2,7 +2,7 @@ import React, { useReducer, createContext } from 'react'
 import P from 'prop-types'
 import { mockData } from './mockData'
 
-export const GlobalContext = createContext()
+export const DataContext = createContext()
 const reducer = (state, action) => {
     switch (action.type) {
         case 'SHUFFLE':
@@ -15,7 +15,7 @@ const reducer = (state, action) => {
     }
 }
 
-export const GlobalContextProvider = ({ children }) => {
+export const DataContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, mockData)
     
     const buildActions = (dispatch) => {
@@ -26,13 +26,13 @@ export const GlobalContextProvider = ({ children }) => {
 const actions = buildActions(dispatch)
 
     return (
-        <GlobalContext.Provider value={[state, actions]}>
+        <DataContext.Provider value={[state, actions]}>
             {children}
-        </GlobalContext.Provider>
+        </DataContext.Provider>
     )
 }
 
-GlobalContextProvider.propTypes = {
+DataContextProvider.propTypes = {
     children: P.node.isRequired
 }
 
