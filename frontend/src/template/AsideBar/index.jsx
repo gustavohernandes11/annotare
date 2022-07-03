@@ -1,6 +1,6 @@
 import { IconButton } from '../../components/IconButton/index.jsx'
 import { Heart, ListAlt, Moon } from '@styled-icons/fa-regular'
-import { List, Th} from '@styled-icons/fa-solid'
+import { Th } from '@styled-icons/fa-solid'
 import * as Styled from './styles.js'
 import Logo from '../../assets/imgs/logo.png'
 
