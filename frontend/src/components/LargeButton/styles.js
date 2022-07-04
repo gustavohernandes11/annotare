@@ -6,12 +6,18 @@ export const Container = styled.div`
         padding:${theme.spacings.small} ;
         padding-right: ${theme.spacings.large};
         padding-left: ${theme.spacings.large};
-        background: ${theme.colors.secondary};
-        color: ${theme.colors.primary};
+        color:${theme.colors.primary};
+        border: 1px solid ${theme.colors.grey};
+        background: transparent;
         border-radius: 5px;
-        border: none;
-
+        margin-inline: ${theme.spacings.xsmall};
     }   
+        > button[primary = true] {
+            background: ${theme.colors.secondary};
+            border: 1px solid ${theme.colors.secondary};
+            color: ${theme.colors.primary};
+
+        }
     > button:hover{
         cursor: pointer
     }

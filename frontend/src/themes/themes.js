@@ -7,6 +7,7 @@ export const theme = {
         backgroundTertiary: '#242632',
 
         black: '#121212',
+        grey: '#909090',
         border: '#404040',
 
 

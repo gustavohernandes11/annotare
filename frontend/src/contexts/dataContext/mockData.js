@@ -12,7 +12,7 @@ export const mockData = {
         {
             id: 3,
             name: 'Chemistry',
-            color: 'yellow'
+            color: 'crimson'
 
         },
         {

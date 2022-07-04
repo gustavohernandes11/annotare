@@ -7,5 +7,10 @@ describe('<LargeButton />', () => {
     it('should render the large button', () => {
         customRender(<LargeButton>LargeButton</LargeButton>)
         expect(screen.getByLabelText('large-button')).toBeInTheDocument()
-    })
+    });
+    it('should render the large button as primary', () => {
+        customRender(<LargeButton primary>LargeButton</LargeButton>)
+        expect(screen.getByLabelText('large-button')).toHaveProperty('primary', true)
+    });
+    
 })

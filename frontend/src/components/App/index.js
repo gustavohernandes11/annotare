@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './styles.js';
 import * as Styled from './styles.js'
@@ -7,20 +7,27 @@ import { AsideBar } from '../../template/AsideBar'
 import { AsideMenu } from '../../template/AsideMenu'
 import { Content } from '../../template/Content'
 import { DataContextProvider } from '../../contexts/dataContext/DataContextProvider.jsx';
+import { GlobalContextProvider } from '../../contexts/globalContext/GlobalContextProvider'
+import { Editor } from '../Editor/index.jsx';
 
 function App() {
+  const [isEditorOpen, setIsEditorOpen] = useState(false)
   return (
-    <DataContextProvider>
+    <GlobalContextProvider>
       <Theme>
         <div id="app">
           <Styled.Container>
             <AsideBar />
-            <AsideMenu />
-            <Content />
+            <DataContextProvider>
+              <AsideMenu />
+              <span>
+                {isEditorOpen ? <Editor /> : <Content />}
+              </span>
+            </DataContextProvider>
           </Styled.Container>
         </div>
       </Theme>
-    </DataContextProvider>
+    </GlobalContextProvider>
 
   );
 }

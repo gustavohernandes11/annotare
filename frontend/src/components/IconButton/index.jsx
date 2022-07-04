@@ -1,8 +1,8 @@
 import * as Styled from './styles.js'
 
-export const IconButton = ({ children }) => {
+export const IconButton = ({ children, onClick }) => {
     return (
-        <Styled.Container>
+        <Styled.Container onClick={onClick}>
             {children}
         </Styled.Container>
     )

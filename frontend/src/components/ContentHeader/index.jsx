@@ -13,7 +13,7 @@ export const ContentHeader = () => {
             </span>
             <SearchInput />
             <span>
-            <LargeButton>Adicionar</LargeButton>
+            <LargeButton primary="true">Adicionar</LargeButton>
             </span>
         </Styled.Header>
     )

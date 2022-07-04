@@ -5,19 +5,32 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color:${theme.colors.backgroundPrimary};
+        border: 1px solid ${theme.colors.border};
+        border-radius: 5px;
+
+        :focus {
+            outline: auto;
+        }
 
         > input {
             border:none;
-            height: 30px;
+            padding: ${theme.spacings.xsmall};
+            width: 140px;
+            background-color: transparent;
+            border:none;
             margin-right: ${theme.spacings.small};
-            border-bottom: 1px solid ${theme.colors.border};
-            background-color:${theme.colors.backgroundPrimary} ;
             color: ${theme.colors.primary};
 
         }
-        > svg {
-            color: ${theme.colors.primary};
-
+        > input:focus {
+            outline: none;
+        }
+        svg {
+            color: ${theme.colors.grey};
+        } 
+        > button {
+            margin: ${theme.spacings.xsmall};
         }
     `}
     

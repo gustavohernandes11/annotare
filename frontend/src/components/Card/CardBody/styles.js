@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Container = styled.main`
-    ${({ theme }) => css`
+    ${({ theme, color = theme.colors.secondary }) => css`
         padding: ${theme.spacings.small} ${theme.spacings.medium};
 
     > p {
@@ -13,5 +13,6 @@ export const Container = styled.main`
         text-overflow: ellipsis;
         line-break: anywhere;
     }
+    
     `}
 `;
