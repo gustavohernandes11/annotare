@@ -16,12 +16,10 @@ export const Container = styled.div`
             position: relative;
             top: 0;
             height: 30px;
-            left: -${theme.spacings.medium};
-            content: ' ';
-            min-height: 40px;
-            border: 2px solid ${color};
-            border-bottom-right-radius: 10px;
-            border-top-right-radius: 10px;
+            left: -${theme.spacings.small};
+            content: '• ';
+            font-size: ${theme.sizes.medium};
+            color: ${color};
         }
 
         :hover {

@@ -28,6 +28,8 @@ export const Container = styled.div`
         }
         svg {
             color: ${theme.colors.grey};
+            margin-right: ${theme.spacings.small};
+
         } 
         > button {
             margin: ${theme.spacings.xsmall};

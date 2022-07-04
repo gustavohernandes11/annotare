@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 export const Container = styled.main`
     ${({ theme, color = theme.colors.secondary }) => css`
         padding: ${theme.spacings.small} ${theme.spacings.medium};
+        flex-grow: 1;
 
     > p {
         display: -webkit-box;

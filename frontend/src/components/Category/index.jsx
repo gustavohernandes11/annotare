@@ -3,7 +3,7 @@ import P from 'prop-types'
 
 export const Category = ({children, color}) => {
     return (
-        <Styled.Container color={color}>
+        <Styled.Container aria-label="category" color={color}>
             {children}
         </Styled.Container>
     )
