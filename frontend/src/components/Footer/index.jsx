@@ -10,6 +10,6 @@ export const Footer = () => {
 }
 
 Footer.propTypes = {
-    children: P.node.isRequired
+    children: P.node
 }
 

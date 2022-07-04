@@ -5,9 +5,8 @@ export const Container = styled.footer`
     display: flex;
     justify-content: space-between;
     font-size: ${theme.sizes.small};
-    color: ${theme.colors.grey};
-    padding:  ${theme.spacings.small} ${theme.spacings.medium};
-
+    color:  ${theme.colors.grey};
+    padding:${theme.spacings.small} ${theme.spacings.medium};
     `}
     
 `;

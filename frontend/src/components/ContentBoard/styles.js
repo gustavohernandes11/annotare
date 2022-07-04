@@ -9,7 +9,6 @@ export const Container = styled.main`
     padding-bottom: ${theme.spacings.large};
     
 
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: ${theme.spacings.small};
 
      h3 {

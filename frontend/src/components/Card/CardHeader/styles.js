@@ -16,7 +16,6 @@ export const Container = styled.header`
         color: ${theme.colors.grey};
         max-width: 30px;
         max-height: 30px;
-        margin-bottom: 0;
     }
     button:hover {
         color: ${theme.colors.primary};

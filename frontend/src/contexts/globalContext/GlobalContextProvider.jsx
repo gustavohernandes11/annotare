@@ -7,12 +7,26 @@ export const GlobalContext = createContext()
 const reducer = (state, action) => {
     switch (action.type) {
         case 'CHANGE_THEME':
-            console.log('change_theme')
-            return { ...state }
+            let newTheme = state.activeTheme;
+            if (state.activeTheme === 'rainbow'){
+                newTheme = 'dark'
+            } else if (state.activeTheme === 'light'){
+                newTheme = 'rainbow'
+            } else if (state.activeTheme === 'dark'){
+                newTheme = 'light'
+            }
+            console.log(newTheme)
+            return { ...state, activeTheme: newTheme};
 
         case 'CHANGE_LAYOUT':
-            console.log('change_layout')
-            return { ...state }
+            let newLayout = state.activeLayout;
+            if (state.activeLayout === 'grid'){
+                newLayout = 'list'
+            } else if (state.activeLayout === 'list'){
+                newLayout = 'grid'
+            }
+            console.log(newLayout)
+            return { ...state, activeLayout: newLayout};
 
         default:
             return { ...state }
