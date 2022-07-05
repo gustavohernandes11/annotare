@@ -10,21 +10,26 @@ export const Container = styled.header`
         padding:  ${theme.spacings.small} ${theme.spacings.medium};
         border-bottom: 1px solid ${theme.colors.border};
         transition: all ease-in-out 0.2s;
+
+    svg {
+        color: 'red';
+    }
        
+    > span {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        
+    }
     
      button {
         color: ${theme.colors.grey};
         max-width: 30px;
         max-height: 30px;
     }
+    
     button:hover {
         color: ${theme.colors.primary};
-    }
-    > span:last-child {
-        display: inherit;
-        flex-direction: inherit;
-        align-items: center;
-
     }
 
     `}

@@ -1,10 +1,15 @@
 import * as Styled from './styles.js'
+import { Github } from '@styled-icons/fa-brands'
+import { IconButton } from '../IconButton'
 import P from 'prop-types'
 
 export const Footer = () => {
     return (
         <Styled.Container>
-            <p>Esse app é cria nossa...</p>
+            <p>Criado por Gustavo Hernandes.</p>
+            <IconButton>
+                <Github widht={30} height={30} />
+            </IconButton>
         </Styled.Container>
     )
 }

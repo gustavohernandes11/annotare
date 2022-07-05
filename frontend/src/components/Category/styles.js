@@ -9,18 +9,11 @@ export const Container = styled.div`
         border-radius: 5px;
         margin-top: ${theme.spacings.xsmall};
         background-color: ${theme.colors.backgroundTertiary};
-        transition: ease-in-out 0.08s;
+        transition: opacity display ease-in-out 0.08s;
         ${selected && `border-left: 6px solid ${color}`};
         box-shadow: 4px 2px 10px rgba(0,0,0, .10);
 
 
-        /* &::before {
-            position: fixed;
-            top: 0;
-            left: -${theme.spacings.small};
-            content: '• ';
-            color: ${color};
-        } */
 
         :hover {
             cursor: pointer;

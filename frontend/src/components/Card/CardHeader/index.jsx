@@ -3,26 +3,31 @@ import P from 'prop-types'
 import { IconButton } from '../../IconButton/index.jsx'
 import { Expand, Marker, Star, TrashAlt, PencilAlt } from '@styled-icons/fa-solid'
 
+const sizeProps = {
+    widht: 15,
+    height: 15
+}
+
 export const CardHeader = ({ isActive }) => {
     return (
         <Styled.Container style={{opacity: isActive ? '1' : '0'}}>
             <span>
                 <IconButton>
-                    <Star />
+                    <Star {...sizeProps} />
                 </IconButton>
                 <IconButton>
-                    <Marker />
+                    <Marker {...sizeProps} />
                 </IconButton>
             </span>
             <span>
                 <IconButton>
-                    <Expand />
+                    <Expand {...sizeProps}/>
                 </IconButton>
                 <IconButton>
-                    <TrashAlt />
+                    <TrashAlt {...sizeProps}/>
                 </IconButton>
                 <IconButton>
-                    <PencilAlt />
+                    <PencilAlt {...sizeProps}/>
                 </IconButton>
             </span>
         </Styled.Container>

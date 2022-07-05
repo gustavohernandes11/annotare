@@ -7,6 +7,7 @@ export const Container = styled.div`
         padding-right: ${theme.spacings.large};
         padding-left: ${theme.spacings.large};
         color:${theme.colors.primary};
+        box-shadow: ${theme.name === 'light' ? '4px 4px 10px rgb(0, 0, 0, .1)' : 'none'};
         
 
         background: transparent;

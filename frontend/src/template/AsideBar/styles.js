@@ -16,7 +16,7 @@ export const Container = styled.nav`
         
 
         button {
-            border: ${theme.name === 'rainbow' ? `1px solid ${theme.colors.border}` : 'none'};
+            border: ${theme.name === 'rainbow' || 'light' ? `1px solid ${theme.colors.border}` : 'none'};
         }
 
         > span {

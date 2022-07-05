@@ -12,6 +12,8 @@ export const Container = styled.button`
     margin-bottom: ${theme.spacings.xsmall};
     border-radius: 5px;
     padding: 5px;
+    max-width: 50px;
+    max-height: 50px;
 
     :hover {
         cursor: pointer;
@@ -20,8 +22,8 @@ export const Container = styled.button`
     `}
     
     > svg {
-        width: 20px;
-        height: 20px;
+        max-width: 20px;
+        max-height: 20px;
     }
     
     
