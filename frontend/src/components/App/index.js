@@ -11,7 +11,7 @@ import { GlobalContextProvider } from '../../contexts/globalContext/GlobalContex
 import { Editor } from '../Editor/index.jsx';
 
 function App() {
-  const [isEditorOpen, setIsEditorOpen] = useState(false)
+  const [isEditorOpen] = useState(false)
   return (
     <GlobalContextProvider>
       <Theme>

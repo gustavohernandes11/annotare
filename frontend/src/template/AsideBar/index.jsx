@@ -1,6 +1,7 @@
 import { IconButton } from '../../components/IconButton/index.jsx'
-import { Heart, ListAlt, Moon } from '@styled-icons/fa-regular'
-import { Th, ThList } from '@styled-icons/fa-solid'
+import {  Heart, ListAlt, Moon, Lightbulb } from '@styled-icons/fa-regular'
+import { Th, ThList, Rainbow } from '@styled-icons/fa-solid'
+import { } from '@styled-icons/fa-brands'
 import * as Styled from './styles.js'
 import Logo from '../../assets/imgs/logo.png'
 import { GlobalContext } from '../../contexts/globalContext/GlobalContextProvider'
@@ -28,7 +29,12 @@ export const AsideBar = () => {
                     }
 
                 </IconButton>
-                <IconButton><Moon title="Change theme" onClick={() => globalActions.changeTheme()} /></IconButton>
+                <IconButton  title="Change theme" onClick={() => globalActions.changeTheme()} >
+                    {globalState.activeTheme === 'light' && (<Rainbow/>)}
+                    {globalState.activeTheme === 'dark' && (<Lightbulb />)}
+                    {globalState.activeTheme === 'rainbow' && (<Moon />)}
+                   
+                </IconButton>
             </span>
         </Styled.Container>
     )
