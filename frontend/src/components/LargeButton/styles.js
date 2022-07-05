@@ -7,15 +7,18 @@ export const Container = styled.div`
         padding-right: ${theme.spacings.large};
         padding-left: ${theme.spacings.large};
         color:${theme.colors.primary};
-        border: 1px solid ${theme.colors.grey};
+        
+
         background: transparent;
         border-radius: 5px;
         margin-inline: ${theme.spacings.xsmall};
+        
+        
     }   
         > button[primary = true] {
             background: ${theme.colors.secondary};
-            border: 1px solid ${theme.colors.secondary};
-            color: ${theme.colors.primary};
+            border: ${theme.name === 'rainbow' ? `1px solid ${theme.colors.border}` : 'none'};
+            color: ${theme.name === 'light' ? theme.colors.white : theme.colors.primary};
 
         }
     > button:hover{

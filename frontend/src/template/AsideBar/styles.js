@@ -11,6 +11,13 @@ export const Container = styled.nav`
         color: ${theme.colors.primary};
         padding: ${theme.spacings.xsmall};
         padding-top: ${theme.spacings.large};
+        box-shadow: 4px 2px 10px rgba(0,0,0, .10);
+        background: ${theme.name === 'rainbow' ? `${theme.colors.secondary}` : `${theme.colors.backgroundSecondary}` }; 
+        
+
+        button {
+            border: ${theme.name === 'rainbow' ? `1px solid ${theme.colors.border}` : 'none'};
+        }
 
         > span {
             width: 100%;

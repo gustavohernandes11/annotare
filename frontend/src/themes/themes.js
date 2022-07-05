@@ -1,4 +1,5 @@
 export const darkTheme = {
+    name: 'dark',
     colors: {
         primary: '#f2f2f2',
         secondary: '#0abf32',
@@ -30,17 +31,19 @@ export const darkTheme = {
 }
 
 export const lightTheme = {
+    name: 'light',
     colors: {
         primary: '#121212',
-        secondary: '#5c7bae',
+        secondary: '#f55d00',
         backgroundPrimary: '#f1f1f1',
         backgroundSecondary: '#f1f1f1',
-        backgroundTertiary: '#f4f4f4',
+        backgroundTertiary: '#f5f6f7',
         
 
         black: '#121212',
+        white: '#f1f1f1',
         grey: '#404040',
-        border: 'rgb(0,0,0, .3)',
+        border: '#b5b8bd',
 
 
     },
@@ -62,16 +65,17 @@ export const lightTheme = {
 }
 
 export const rainbowTheme = {
+    name: 'rainbow',
     colors: {
-        primary: 'red',
-        secondary: '#0abf32',
-        backgroundPrimary: '#15181f',
-        backgroundSecondary: '#1b1d29',
-        backgroundTertiary: '#242632',
+        primary: '#f5f6f7',
+        secondary: 'linear-gradient(45deg, rgba(68,10,101,1) 0%, rgba(14,10,70,1) 100%);',
+        backgroundPrimary: '#222222',
+        backgroundSecondary: '#202020',
+        backgroundTertiary: '#303030',
 
         black: '#121212',
-        grey: '#909090',
-        border: '#404040',
+        grey: '#eaeaea',
+        border: 'rgb(255, 255, 255, 0.2)',
 
 
     },

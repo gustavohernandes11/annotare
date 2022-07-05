@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
     ${({ theme, color = theme.colors.secondary, selected }) => css`
-        border: 1px solid ${theme.colors.border};
+        border: ${theme.name === 'light' ? 'none': `1px solid ${theme.colors.border};` } 
         align-items: center;
         padding: ${theme.spacings.medium};
         color: ${theme.colors.primary};
@@ -10,17 +10,17 @@ export const Container = styled.div`
         margin-top: ${theme.spacings.xsmall};
         background-color: ${theme.colors.backgroundTertiary};
         transition: ease-in-out 0.08s;
-        ${selected && `border-left: 6px solid ${color}`}
+        ${selected && `border-left: 6px solid ${color}`};
+        box-shadow: 4px 2px 10px rgba(0,0,0, .10);
 
-        &::before {
-            position: relative;
+
+        /* &::before {
+            position: fixed;
             top: 0;
-            height: 30px;
             left: -${theme.spacings.small};
             content: '• ';
-            font-size: ${theme.sizes.medium};
             color: ${color};
-        }
+        } */
 
         :hover {
             cursor: pointer;
