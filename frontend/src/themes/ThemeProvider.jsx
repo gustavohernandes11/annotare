@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components"
 import { darkTheme as dark } from "./themes"
 import { lightTheme as light } from './themes'
 import { rainbowTheme as rainbow } from './themes'
+import { LoadingPage } from '../components/LoadingPage'
 
 export const Theme = ({ children }) => {
     const [globalState, globalActions] = useContext(GlobalContext)
@@ -37,7 +38,7 @@ export const Theme = ({ children }) => {
 
     return (
         <ThemeProvider theme={getTheme}>
-            {loading ? <p>Loading</p> : children}
+            {<LoadingPage/> ? <p>Loading</p> : children}
 
         </ThemeProvider>
     )
