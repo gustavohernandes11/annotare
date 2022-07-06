@@ -71,10 +71,10 @@ export const rainbowTheme = {
         secondary: 'linear-gradient(45deg, rgba(68,10,101,1) 0%, rgba(14,10,70,1) 100%);',
         backgroundPrimary: '#222222',
         backgroundSecondary: '#202020',
-        backgroundTertiary: '#303030',
+        backgroundTertiary: '#323232',
 
         black: '#121212',
-        grey: '#eaeaea',
+        grey: '#909090',
         border: 'rgb(255, 255, 255, 0.2)',
 
 

@@ -10,6 +10,13 @@ export const Container = styled.div`
     max-height: 100vh;
     transition: color ease-in-out 0.5s;
 
+    
+
+
+    svg {
+        // should have gradient =(
+    }
+
     `}
 
     

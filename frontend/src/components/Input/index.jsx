@@ -1,9 +1,19 @@
 import * as Styled from './styles.js'
 import P from 'prop-types'
 
-export const Input = ({placeholder, width}) => {
+export const Input = ({type, placeholder, width, height, marginBottom, padding, name, as }) => {
     return (
-        <Styled.Input placeholder={placeholder} width={width}/>
+        <Styled.Input
+            name={name}
+            placeholder={placeholder}
+            width={width}
+            marginBottom={marginBottom}
+            padding={padding}
+            height={height}
+            type={type}
+            as={as}
+        />
+
     )
 }
 

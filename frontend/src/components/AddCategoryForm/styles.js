@@ -1,14 +1,11 @@
 import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.form`
     ${({ theme }) => css`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: ${theme.spacings.xsmall};
-    padding: ${theme.spacings.medium} 0 ${theme.spacings.xsmall};
-
-    
     `}
     
 `;

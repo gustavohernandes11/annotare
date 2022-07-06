@@ -6,7 +6,7 @@ import { Plus, Trash } from '@styled-icons/fa-solid'
 export const AddCategoryForm = () => {
     return (
         <Styled.Container>
-            <Input placeholder="Categoria..." />
+            <Input placeholder="Categoria..." marginBottom="5px" padding="5px" />
             <IconButton size="35px">
                 <Trash width={15} height={15}/>
             </IconButton>
