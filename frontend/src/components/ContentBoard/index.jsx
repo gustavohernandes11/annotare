@@ -8,13 +8,13 @@ import { Popover } from '../Popover/index.jsx'
 export const ContentBoard = () => {
     const [dataState] = useContext(DataContext);
     const [globalState] = useContext(GlobalContext);
-
+    const [isPopoverActive, setIsPopoverActive] = useState(true)
 
 
     return (
         <>
             {/* Gradient to apply in svg */}
-            <svg aria-hidden="true" focusable="false">
+            <svg aria-hidden="true" style={{width: 0, height: 0, position: 'absolute'}} focusable="false">
                 <linearGradient id="my-cool-gradient" x2="1" y2="1">
                     <stop offset="0%" stop-color="#b535ff" />
                     <stop offset="100%" stop-color="#918af0" />
@@ -31,11 +31,11 @@ export const ContentBoard = () => {
                 {dataState.annotations?.map(annotation => <Card key={annotation.id} heading={annotation.heading}>
                     {annotation.content}
                 </Card>)}
-                <Popover
-                    mensage="Atenção. Obrigado pela atenção"
-                    acceptFunction={() => console.log('aceito')}
-                    cancelFunction={() => console.log('cancel')} />
             </Styled.Container>
+            {isPopoverActive && <Popover
+                mensage="Atenção. Obrigado pela atenção"
+                acceptFunction={() => setIsPopoverActive(() => false)}
+                cancelFunction={() => setIsPopoverActive(() => false)} />}
         </>
     )
 }

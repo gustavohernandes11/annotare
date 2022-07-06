@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import './styles.js';
 import * as Styled from './styles.js'
@@ -8,8 +8,8 @@ import { AsideMenu } from '../../template/AsideMenu'
 import { Content } from '../../template/Content'
 import { DataContextProvider } from '../../contexts/dataContext/DataContextProvider.jsx';
 import { GlobalContextProvider } from '../../contexts/globalContext/GlobalContextProvider'
-import { Editor } from '../Editor/index.jsx';
-import { GlobalContext } from "../../contexts/globalContext/GlobalContextProvider";
+// import { Editor } from '../Editor/index.jsx';
+
 
 function App() {
   return (
