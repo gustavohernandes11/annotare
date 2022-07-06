@@ -1,5 +1,4 @@
 import * as Styled from './styles.js'
-import P from 'prop-types'
 
 export const LoadingPage = () => {
     return (
@@ -7,9 +6,5 @@ export const LoadingPage = () => {
             <h1>Loading...</h1>
         </Styled.Container>
     )
-}
-
-LoadingPage.propTypes = {
-    children: P.node.isRequired
 }
 

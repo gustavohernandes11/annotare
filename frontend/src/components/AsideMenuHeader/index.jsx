@@ -4,10 +4,13 @@ import { AddCategoriesButton } from '../AddCategoriesButton/index.jsx'
 
 export const AsideMenuHeader = () => {
     return (
+        <>
         <Styled.Header>
             <Heading as='h2'>Categories</Heading>
-            <AddCategoriesButton />
+            <AddCategoriesButton onClick={() => {}} />
         </Styled.Header>
+        {/* Componente de input de categoria */}
+        </>
     )
 }
 

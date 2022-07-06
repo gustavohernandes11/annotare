@@ -11,10 +11,11 @@ export const Container = styled.footer`
         align-items: center;
         justify-content: space-between;
         
-        > button {
+        > button, > a {
             border: ${theme.name === 'rainbow' || 'light' ? `1px solid ${theme.colors.border}` : 'none'};
 
         }
+        
     `}
     
 `;

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Container = styled.button`
     ${({ theme }) => css`
+    display: flex;
     background-color: ${theme.colors.backgroundTertiary};
     justify-content: center;
     align-items: center ;

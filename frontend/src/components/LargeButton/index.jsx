@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as Styled from './styles.js'
 import P from 'prop-types'
 

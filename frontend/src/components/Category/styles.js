@@ -13,10 +13,17 @@ export const Container = styled.div`
         ${selected && `border-left: 6px solid ${color}`};
         box-shadow: 4px 2px 10px rgba(0,0,0, .10);
 
+        
+
 
 
         :hover {
             cursor: pointer;
+            &::before {
+            content: '• ';
+            color: ${color};
+            transition: all 0.35s ease-in-out;
+        }
 
         }
 

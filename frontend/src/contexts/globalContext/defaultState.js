@@ -1,7 +1,7 @@
 import P from 'prop-types'
 export const defaultState = {
     isAsideMenuOpen: false,
-    isEditorOpen: false,
+    editMode: null,
     activeTheme: 'dark',
     activeLayout: 'grid',
     selectedCard: null,
@@ -10,7 +10,7 @@ export const defaultState = {
 
 defaultState.propTypes = {
     isAsideMenuOpen: P.bool.isRequired,
-    isEditorOpen: P.bool.isRequired,
+    editMode: P.oneOf(['new', 'edit', null]).isRequired,
     activeTheme: P.oneOf(['dark', 'light', 'rainbow']).isRequired,
     activeLayout: P.oneOf(['grid', 'list']).isRequired,
     selectedCard: P.object,

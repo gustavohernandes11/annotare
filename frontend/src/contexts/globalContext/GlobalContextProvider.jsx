@@ -6,6 +6,9 @@ export const GlobalContext = createContext()
 
 const reducer = (state, action) => {
     switch (action.type) {
+        case 'SET_EDIT_MODE':
+            return { ...state, editMode: action.payload};
+            
         case 'SET_THEME':
             return { ...state, activeTheme: action.payload};
 
@@ -46,7 +49,8 @@ export const GlobalContextProvider = ({ children }) => {
         return {
             changeTheme: () => { dispatch({ type: "CHANGE_THEME" }) },
             changeLayout: () => { dispatch({ type: "CHANGE_LAYOUT" }) },
-            setTheme: (payload) => { dispatch({type: "SET_THEME", payload})}
+            setTheme: (payload) => { dispatch({ type: "SET_THEME", payload })},
+            setEditMode: (payload) => { dispatch({ type: "SET_EDIT_MODE", payload })}
         }
     }
     const actions = buildActions(dispatch)

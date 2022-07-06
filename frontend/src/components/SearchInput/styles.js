@@ -15,7 +15,7 @@ export const Container = styled.div`
 
         > input {
             border:none;
-            padding: ${theme.spacings.xsmall};
+            padding: ${theme.spacings.small};
             width: 140px;
             background-color: transparent;
             border:none;

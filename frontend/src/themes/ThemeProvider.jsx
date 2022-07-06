@@ -15,12 +15,13 @@ export const Theme = ({ children }) => {
         const storagedTheme = localStorage.getItem('storagedTheme')
         if (storagedTheme === null || undefined) {
             localStorage.setItem('storagedTheme', 'light')
-            return globalActions.setTheme('light')
+            globalActions.setTheme('dark')
         } else {
             globalActions.setTheme(storagedTheme)
         }
         setLoading(() => false)
-    }, [globalActions]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const getTheme = () => {
         switch (globalState.activeTheme) {
@@ -38,7 +39,7 @@ export const Theme = ({ children }) => {
 
     return (
         <ThemeProvider theme={getTheme}>
-            {<LoadingPage/> ? <p>Loading</p> : children}
+             {loading ? <LoadingPage/> : children }
 
         </ThemeProvider>
     )

@@ -2,15 +2,15 @@ import * as Styled from './styles.js'
 import { Plus } from '@styled-icons/fa-solid'
 import P from 'prop-types'
 
-export const AddCategoriesButton = () => {
+export const AddCategoriesButton = ({ onClick }) => {
     return (
-        <Styled.Container>
+        <Styled.Container onClick={onClick}>
             <Plus width={15} height={15} />
         </Styled.Container>
     )
 }
 
 AddCategoriesButton.propTypes = {
-    children: P.node.isRequired
+    onClick: P.func.isRequired
 }
 

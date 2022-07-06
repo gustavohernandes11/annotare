@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 
 import './styles.js';
 import * as Styled from './styles.js'
@@ -9,9 +9,9 @@ import { Content } from '../../template/Content'
 import { DataContextProvider } from '../../contexts/dataContext/DataContextProvider.jsx';
 import { GlobalContextProvider } from '../../contexts/globalContext/GlobalContextProvider'
 import { Editor } from '../Editor/index.jsx';
+import { GlobalContext } from "../../contexts/globalContext/GlobalContextProvider";
 
 function App() {
-  const [isEditorOpen] = useState(false)
   return (
     <GlobalContextProvider>
       <Theme>
@@ -21,7 +21,7 @@ function App() {
             <DataContextProvider>
               <AsideMenu />
               <span>
-                {isEditorOpen ? <Editor /> : <Content />}
+                <Editor />
               </span>
             </DataContextProvider>
           </Styled.Container>

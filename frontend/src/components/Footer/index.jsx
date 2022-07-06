@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <Styled.Container>
             <p>Criado por Gustavo Hernandes.</p>
-            <IconButton>
+            <IconButton target="_blank" as={'a'} href="https://github.com/gustavohernandes11/annotare">
                 <Github widht={30} height={30} />
             </IconButton>
         </Styled.Container>

@@ -2,9 +2,12 @@ import * as Styled from './styles.js'
 import { Heading } from '../Heading/index.jsx'
 import { LargeButton } from '../LargeButton/index.jsx'
 import { SearchInput } from '../SearchInput/index.jsx'
+import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 import P from 'prop-types'
 
 export const ContentHeader = () => {
+    const [globalState, globalActions] = useGlobalContext()
+
     return (
         <Styled.Header>
             <span>
@@ -13,7 +16,7 @@ export const ContentHeader = () => {
             </span>
             <SearchInput />
             <span>
-            <LargeButton primary="true">Adicionar</LargeButton>
+            <LargeButton onClick={() => globalActions.setEditMode('new')} primary="true">Adicionar</LargeButton>
             </span>
         </Styled.Header>
     )
