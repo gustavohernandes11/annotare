@@ -6,7 +6,6 @@ import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 import P from 'prop-types'
 
 export const ContentHeader = () => {
-    const [globalState, globalActions] = useGlobalContext()
 
     return (
         <Styled.Header>
@@ -16,7 +15,7 @@ export const ContentHeader = () => {
             </span>
             <SearchInput />
             <span>
-            <LargeButton onClick={() => globalActions.setEditMode('new')} primary="true">Adicionar</LargeButton>
+            <LargeButton  primary="true">Adicionar</LargeButton>
             </span>
         </Styled.Header>
     )

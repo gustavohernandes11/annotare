@@ -13,8 +13,8 @@ export const Container = styled.div`
     
 
 
-    svg {
-        // should have gradient =(
+    path {
+        fill: ${theme.name === 'rainbow' ? `url('#my-cool-gradient')` : 'inherit'};
     }
 
     `}

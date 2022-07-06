@@ -8,6 +8,7 @@ export const Container = styled.div`
         background-color:${theme.colors.backgroundPrimary};
         border: 1px solid ${theme.colors.border};
         border-radius: 5px;
+        box-shadow: 4px 4px 10px rgb(0, 0, 0, .1);
 
         :focus {
             outline: auto;

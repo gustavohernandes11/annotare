@@ -21,7 +21,7 @@ function App() {
             <DataContextProvider>
               <AsideMenu />
               <span>
-                <Editor />
+                <Content />
               </span>
             </DataContextProvider>
           </Styled.Container>
