@@ -3,13 +3,14 @@ import styled, { css } from 'styled-components'
 export const Container = styled.div`
         ${({ theme }) => css`
         > button {
-        padding:${theme.spacings.small};
-        padding-right: ${theme.spacings.large};
-        padding-left: ${theme.spacings.large};
-        color:${theme.colors.primary};
-        box-shadow: ${theme.name === 'light' ? '4px 4px 10px rgb(0, 0, 0, .1)' : 'none'};
+            padding:${theme.spacings.small};
+            padding-right: ${theme.spacings.large};
+            padding-left: ${theme.spacings.large};
+            color:${theme.colors.primary};
+            box-shadow: 4px 4px 10px rgb(0, 0, 0, .1);
         
 
+        border: 1px solid ${theme.colors.border};
         background: transparent;
         border-radius: 5px;
         margin-inline: ${theme.spacings.xsmall};
