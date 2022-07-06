@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const Container = styled.button`
-    ${({ theme }) => css`
+    ${({ theme, size="40px" }) => css`
     display: flex;
     background-color: ${theme.colors.backgroundTertiary};
     justify-content: center;
@@ -13,8 +13,8 @@ export const Container = styled.button`
     margin-bottom: ${theme.spacings.xsmall};
     border-radius: 5px;
     padding: 5px;
-    max-width: 50px;
-    max-height: 50px;
+    max-width: ${size};
+    max-height: ${size};
 
     :hover {
         cursor: pointer;
