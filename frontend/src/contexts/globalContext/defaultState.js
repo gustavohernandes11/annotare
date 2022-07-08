@@ -1,6 +1,6 @@
 import P from 'prop-types'
 export const defaultState = {
-    isAsideMenuOpen: false,
+    addCategoryMode: false,
     editMode: null,
     activeTheme: 'dark',
     activeLayout: 'grid',
@@ -9,7 +9,7 @@ export const defaultState = {
 }
 
 defaultState.propTypes = {
-    isAsideMenuOpen: P.bool.isRequired,
+    addCategoryMode: P.bool.isRequired,
     editMode: P.oneOf(['new', 'edit', null]).isRequired,
     activeTheme: P.oneOf(['dark', 'light', 'rainbow']).isRequired,
     activeLayout: P.oneOf(['grid', 'list']).isRequired,

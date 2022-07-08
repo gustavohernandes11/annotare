@@ -15,7 +15,11 @@ export const Container = styled.footer`
             border: ${theme.name === 'rainbow' || 'light' ? `1px solid ${theme.colors.border}` : 'none'};
 
         }
-        
+        >span {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     `}
     
 `;

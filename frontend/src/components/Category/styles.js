@@ -12,7 +12,7 @@ export const Container = styled.div`
         ${selected && `border-left: 6px solid ${color}`};
         
         
-        :hover {
+        :hover, [selected=true] {
             background-color: ${theme.colors.backgroundTertiary};
             box-shadow: 4px 2px 10px rgba(0,0,0, .10);
             cursor: pointer;

@@ -4,6 +4,10 @@ import P from 'prop-types'
 export const Input = ({type, placeholder, width, height, marginBottom, padding, name, as }) => {
     return (
         <Styled.Input
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
             name={name}
             placeholder={placeholder}
             width={width}

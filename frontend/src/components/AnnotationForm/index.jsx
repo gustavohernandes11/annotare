@@ -2,6 +2,7 @@ import * as Styled from './styles.js'
 import { Input } from '../Input'
 import P from 'prop-types'
 import { Button } from '../Button/index.jsx'
+import { CheckBox } from '../CheckBox'
 
 export const AnnotationForm = () => {
     return (
@@ -17,10 +18,7 @@ export const AnnotationForm = () => {
                     <option value="Categoria y">Categoria y</option>
                     <option value="Categoria w">Categoria w</option>
                 </select>
-                <span>
-                    <Input width={`fit-content`} type="checkbox" name="note-checkbox" />
-                    <label htmlFor="note-title">Favorito</label>
-                </span>
+                <CheckBox label="Favorito" onClick={() => {}} width={`fit-content`} />
             </span>
             <label htmlFor="note-content">Mensagem</label>
             <span>

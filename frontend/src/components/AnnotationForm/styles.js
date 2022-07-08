@@ -15,7 +15,7 @@ export const Form = styled.form`
    .margin-right {
     margin-right: ${theme.spacings.large};
    }
-    > span {
+> span {
         margin-bottom: ${theme.spacings.small};
         display: flex;
         flex-wrap: nowrap;

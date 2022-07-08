@@ -16,6 +16,7 @@ export const Container = styled.div`
     path {
         fill: ${theme.name === 'rainbow' ? `url('#my-cool-gradient')` : 'inherit'};
     }
+    
 
     `}
 

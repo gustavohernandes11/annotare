@@ -6,6 +6,15 @@ export const GlobalContext = createContext()
 
 const reducer = (state, action) => {
     switch (action.type) {
+        case 'SET_SELECTED_CARD':
+            return { ...state, selectedCard: action.payload};
+
+        case 'SET_SELECTED_CATEGORY':
+            return { ...state, selectedCategory: action.payload};
+
+        case 'SET_ADD_CATEGORY_MODE':
+            return { ...state, addCategoryMode: action.payload};
+
         case 'SET_EDIT_MODE':
             return { ...state, editMode: action.payload};
             
@@ -50,7 +59,9 @@ export const GlobalContextProvider = ({ children }) => {
             changeTheme: () => { dispatch({ type: "CHANGE_THEME" }) },
             changeLayout: () => { dispatch({ type: "CHANGE_LAYOUT" }) },
             setTheme: (payload) => { dispatch({ type: "SET_THEME", payload })},
-            setEditMode: (payload) => { dispatch({ type: "SET_EDIT_MODE", payload })}
+            setEditMode: (payload) => { dispatch({ type: "SET_EDIT_MODE", payload })},
+            setAddCategoryMode: (payload) => { dispatch({ type: "SET_ADD_CATEGORY_MODE", payload })},
+            setSelectedCategory: (payload) => { dispatch({ type: "SET_SELECTED_CATEGORY", payload })}
         }
     }
     const actions = buildActions(dispatch)

@@ -1,7 +1,7 @@
 import * as Styled from './styles.js'
 import P from 'prop-types'
 import { IconButton } from '../../IconButton/index.jsx'
-import { Expand, Marker, Star, TrashAlt, PencilAlt } from '@styled-icons/fa-solid'
+import { Expand, Star, TrashAlt, PencilAlt } from '@styled-icons/fa-solid'
 
 const sizeProps = {
     widht: 15,
@@ -14,9 +14,6 @@ export const CardHeader = ({ isActive }) => {
             <span>
                 <IconButton>
                     <Star {...sizeProps} />
-                </IconButton>
-                <IconButton>
-                    <Marker {...sizeProps} />
                 </IconButton>
             </span>
             <span>
