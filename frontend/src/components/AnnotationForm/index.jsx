@@ -22,6 +22,11 @@ export const AnnotationForm = () => {
     const [formData, setFormData] = useState(initialFormData);
 
     useEffect(() => {
+        setFormData({ ...formData, category: globalState.selectedCategory })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
         console.log(formData)
 
     }, [formData]);
@@ -32,11 +37,9 @@ export const AnnotationForm = () => {
             setFormData({ ...formData, id: Date.now() })
         }
         if (!formData.category) {
-            throw new Error('Escolha uma categoria!');
+            return new Error('Escolha uma categoria!');
         } else {
-            dataActions.addNewAnnotation({
-                ...formData
-            })
+            dataActions.addNewAnnotation(formData)
             console.log(formData)
             globalActions.setEditMode(false)
         }
@@ -48,6 +51,7 @@ export const AnnotationForm = () => {
             <span>
                 <Input
                     name="note-title"
+                    maxLength="100"
                     placeholder="..."
                     onChange={(e) => setFormData({ ...formData, heading: e.target.value })}
                 />
@@ -56,8 +60,14 @@ export const AnnotationForm = () => {
                 <select name="nonte-category"
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                     className="margin-right">
-                    <option value="" disabled selected>Selecione uma categoria</option>
-                    {dataState.categories.map((category) => <option value={category.name}>{category.name}</option>)}
+                    <option value="" disabled selected={globalState.selectedCategory === null}>Selecione uma categoria</option>
+
+                    {dataState.categories.map((category) => <option
+                        selected={globalState.selectedCategory === category.name}
+                        value={category.name}
+                    >
+                        {category.name}
+                    </option>)}
                 </select>
                 <CheckBox
                     label="Favorito"
@@ -70,6 +80,7 @@ export const AnnotationForm = () => {
             <span>
                 <Input
                     height="200px"
+                    maxLength="500"
                     name="note-content"
                     as="textarea"
                     placeholder="..."

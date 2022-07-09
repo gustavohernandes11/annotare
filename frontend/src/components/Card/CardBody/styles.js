@@ -5,14 +5,20 @@ export const Container = styled.main`
         padding: ${theme.spacings.small} ${theme.spacings.medium};
         flex-grow: 1;
 
-    > p {
-        display: -webkit-box;
+        > p, h3 {
+            display: -webkit-box;
         -webkit-line-clamp: 8;
         text-align: justify;
         -webkit-box-orient: vertical;  
         overflow: hidden; 
         text-overflow: ellipsis;
         line-break: anywhere;
+        }
+        
+        > h3 {
+        -webkit-line-clamp: 4;
+
+
     }
     
     `}

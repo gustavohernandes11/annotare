@@ -14,12 +14,12 @@ export const AddCategoryForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const repeatedNames = dataState.categories.filter(e => e.name === inputName)
+        const repeatedNames = dataState.categories.filter(e => e.name === inputName.trim())
         if (repeatedNames.length > 0) {
             throw new Error('Ja está em uso')
         } else {
             dataActions.addNewCategory({
-                name: inputName,
+                name: inputName.trim(),
                 id: Date.now(),
                 color: 'grey'
             })
