@@ -11,6 +11,7 @@ export const Card = ({ heading, children, color, category, createdAt }) => {
     return (
         <>
             <Styled.Container
+                fallback={<p>...</p>}
                 color={color}
                 onMouseEnter={() => setIsActive(() => true)}
                 onMouseLeave={() => setIsActive(() => false)}

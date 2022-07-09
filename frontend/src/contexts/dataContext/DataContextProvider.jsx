@@ -5,25 +5,34 @@ import { mockData } from './mockData'
 export const DataContext = createContext()
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'SHUFFLE':
-            const newAnnotations = state.annotations
-            newAnnotations.sort(() => Math.random() - 0.5) 
-            return  {...state, newAnnotations}
+        case 'ADD_NEW_CATEGORY':
+            console.log(action.payload)
+            console.log(state)
+            return { ...state, categories: [...state.categories, {...action.payload}] }
+        case 'ADD_NEW_ANNOTATION':
+            return { ...state }
+        case 'REMOVE_CATEGORY':
+            return { ...state }
+        case 'REMOVE_ANNOTATION':
+            return { ...state }
 
         default:
-            return {...state}
+            return { ...state }
     }
 }
 
 export const DataContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, mockData)
-    
+
     const buildActions = (dispatch) => {
         return {
-            shuffle: () => { dispatch({ type: "SHUFFLE" }) },
+            addNewCategory: (payload) => { dispatch({ type: "ADD_NEW_CATEGORY", payload }) },
+            addNewAnnotation: (payload) => { dispatch({ type: "ADD_NEW_ANNOTATION", payload }) },
+            removeCategory: (payload) => { dispatch({ type: "REMOVE_CATEGORY", payload }) },
+            removeAnnotation: (payload) => { dispatch({ type: "REMOVE_ANNOTATION", payload }) },
         }
     }
-const actions = buildActions(dispatch)
+    const actions = buildActions(dispatch)
 
     return (
         <DataContext.Provider value={[state, actions]}>

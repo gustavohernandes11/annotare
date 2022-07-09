@@ -10,8 +10,7 @@ const initialFormData = {
     heading: null,
     content: null,
     category_id: null,
-    created_at: Date.now(),
-    favorite: false,
+    created_at: Date.now()
 }
 
 export const AnnotationForm = () => {

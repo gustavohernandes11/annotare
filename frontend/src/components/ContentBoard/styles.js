@@ -4,6 +4,7 @@ export const Container = styled.main`
     ${({ theme }) => css`
     display: grid;
     width: 100%;
+    flex-grow: 1;
     color: ${theme.colors.primary};
     padding-top: ${theme.spacings.xlarge};
     padding-bottom: ${theme.spacings.large};

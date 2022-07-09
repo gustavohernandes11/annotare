@@ -30,9 +30,9 @@ export const ContentBoard = () => {
                     ? 'repeat(auto-fill, minmax(280px, 1fr))'
                     : '1fr'
             }}>
-                <Card heading="Anotação de teste: Objeto global">
+                {/* <Card heading="Anotação de teste: Objeto global">
                     {JSON.stringify(globalState)}
-                </Card>
+                </Card> */}
                 {filteredAnnotations?.map(annotation => <Card
                     key={annotation.id}
                     heading={annotation.heading}
