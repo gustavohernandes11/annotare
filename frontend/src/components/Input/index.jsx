@@ -1,13 +1,14 @@
 import * as Styled from './styles.js'
 import P from 'prop-types'
 
-export const Input = ({type, placeholder, width, height, marginBottom, padding, name, as }) => {
+export const Input = ({value, onChange, type, placeholder, width, height, marginBottom, padding, name, as }) => {
     return (
         <Styled.Input
             autocomplete="off"
             autocorrect="off"
             autocapitalize="off"
             spellcheck="false"
+            onChange={onChange}
             name={name}
             placeholder={placeholder}
             width={width}
@@ -16,6 +17,8 @@ export const Input = ({type, placeholder, width, height, marginBottom, padding, 
             height={height}
             type={type}
             as={as}
+            value={value}
+
         />
 
     )

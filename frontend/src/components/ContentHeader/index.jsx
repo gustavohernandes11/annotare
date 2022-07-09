@@ -4,16 +4,20 @@ import { LargeButton } from '../LargeButton/index.jsx'
 import { SearchInput } from '../SearchInput/index.jsx'
 import { useGlobalContext } from '../../hooks/useGlobalContext'
 import P from 'prop-types'
+// import { useRef } from 'react'
+
+// const searchInput = document.querySelector('#search-input')
 
 export const ContentHeader = () => {
+    // const input = useRef(searchInput)
     const [state, actions] = useGlobalContext();
     return (
         <Styled.Header>
             <span>
                 <Heading>{state.selectedCategory || 'Todas'}</Heading>
-                <p>Suas Anotações</p>
+                <p>{state.searchInputValue ? `Buscando por "${state.searchInputValue}"` : 'Suas anotações'}</p>
             </span>
-            <SearchInput />
+            <SearchInput id="search-input" onChange={(e) => actions.setSearchInputValue(e.target.value)} />
             <span>
                 <LargeButton primary="true" onClick={() => actions.setEditMode(true)}>Adicionar</LargeButton>
             </span>

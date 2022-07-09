@@ -1,13 +1,20 @@
 import * as Styled from './styles.js'
 import P from 'prop-types'
 import { Input } from '../Input'
-export const CheckBox = ({ onClick, label, name, width }) => {
+export const CheckBox = ({ onClick, onChange, label, name, width, value }) => {
     return (
         <Styled.Span>
-           <span>
-                    <Input onClick={onClick} width={width} type="checkbox" name={name} />
-                    <label htmlFor="note-title">{label}</label>
-                </span>
+            <span>
+                <Input
+                    value={value}
+                    onClick={onClick}
+                    onChange={onChange}
+                    width={width}
+                    type="checkbox"
+                    name={name}
+                />
+                <label htmlFor="note-title">{label}</label>
+            </span>
         </Styled.Span>
     )
 }

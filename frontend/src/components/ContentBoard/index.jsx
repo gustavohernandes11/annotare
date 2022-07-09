@@ -1,4 +1,4 @@
-import {  useState } from 'react'
+import { useState, useEffect } from 'react'
 import * as Styled from './styles.js'
 import { Card } from '../Card/index.jsx'
 
@@ -6,12 +6,18 @@ import { Popover } from '../Popover/index.jsx'
 import { useDataContext } from '../../hooks/useDataContext.jsx'
 import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 
+
 export const ContentBoard = () => {
     const [dataState] = useDataContext();
     const [globalState] = useGlobalContext();
     const [isPopoverActive, setIsPopoverActive] = useState(false)
 
+    const searchRegex = new RegExp(`${globalState.searchInputValue}`, 'gi')
+    const filterBySearch = (array) => array?.filter(e => e.content.search(searchRegex) !== -1)
 
+    const filterByCategory = (array) => array.filter(e => e.category === globalState.selectedCategory)
+
+    console.log(filterBySearch(dataState.annotations))
     return (
         <>
             <Styled.Container style={{
@@ -19,10 +25,10 @@ export const ContentBoard = () => {
                     ? 'repeat(auto-fill, minmax(280px, 1fr))'
                     : '1fr'
             }}>
-                <Card heading="object dataState">
+                <Card heading="Anotação de teste: Objeto global">
                     {JSON.stringify(globalState)}
                 </Card>
-                {dataState.annotations?.map(annotation => <Card key={annotation.id} heading={annotation.heading}>
+                {filterByCategory(filterBySearch(dataState.annotations))?.map(annotation => <Card key={annotation.id} heading={annotation.heading}>
                     {annotation.content}
                 </Card>)}
             </Styled.Container>

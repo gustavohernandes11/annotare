@@ -6,6 +6,7 @@ export const defaultState = {
     activeLayout: 'grid',
     selectedCard: null,
     selectedCategory: null,
+    searchInputValue: '',
 }
 
 defaultState.propTypes = {

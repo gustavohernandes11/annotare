@@ -13,11 +13,6 @@ export const CardHeader = ({ isActive }) => {
         <Styled.Container style={{opacity: isActive ? '1' : '0'}}>
             <span>
                 <IconButton>
-                    <Star {...sizeProps} />
-                </IconButton>
-            </span>
-            <span>
-                <IconButton>
                     <Expand {...sizeProps}/>
                 </IconButton>
                 <IconButton>
