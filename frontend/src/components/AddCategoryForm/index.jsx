@@ -25,7 +25,6 @@ export const AddCategoryForm = () => {
             })
             globalActions.setAddCategoryMode(false);
         }
-        console.log(repeatedNames)
     }
 
     return (

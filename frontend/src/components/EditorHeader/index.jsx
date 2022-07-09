@@ -13,10 +13,7 @@ export const EditorHeader = () => {
             <Heading>Criação e edição</Heading>
             <p>Editando anotação de "Math"</p>
             </span>
-            <span className="buttons-area">
-                <LargeButton onClick={() => actions.setEditMode(false)} >Cancelar</LargeButton>
-                <LargeButton primary="true" onClick={() => actions.setEditMode(false)}>Finalizar</LargeButton>
-            </span>
+                <LargeButton onClick={() => actions.setEditMode(false)} >Voltar</LargeButton>
         </Styled.Header>
     )
 }

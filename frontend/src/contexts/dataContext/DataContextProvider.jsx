@@ -6,11 +6,9 @@ export const DataContext = createContext()
 const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NEW_CATEGORY':
-            console.log(action.payload)
-            console.log(state)
             return { ...state, categories: [...state.categories, {...action.payload}] }
         case 'ADD_NEW_ANNOTATION':
-            return { ...state }
+            return { ...state, annotations: [...state.annotations, {...action.payload}] }
         case 'REMOVE_CATEGORY':
             return { ...state }
         case 'REMOVE_ANNOTATION':

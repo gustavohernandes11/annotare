@@ -1,26 +1,46 @@
 import { useState, useEffect } from 'react'
 import * as Styled from './styles.js'
 import { Input } from '../Input'
-import P from 'prop-types'
+// import P from 'prop-types'
+import { Button } from '../Button'
 import { CheckBox } from '../CheckBox'
 import { useDataContext } from '../../hooks/useDataContext.jsx'
+import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 
 const initialFormData = {
     id: null,
     heading: null,
     content: null,
-    category_id: null,
-    created_at: Date.now()
+    category: null,
+    created_at: 'now'
 }
 
 export const AnnotationForm = () => {
-    const [dataState] = useDataContext();
+    const [dataState, dataActions] = useDataContext();
+    // eslint-disable-next-line no-unused-vars
+    const [globalState, globalActions] = useGlobalContext();
     const [formData, setFormData] = useState(initialFormData);
 
     useEffect(() => {
         console.log(formData)
 
     }, [formData]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!formData.id) {
+            setFormData({ ...formData, id: Date.now() })
+        }
+        if (!formData.category) {
+            throw new Error('Escolha uma categoria!');
+        } else {
+            dataActions.addNewAnnotation({
+                ...formData
+            })
+            console.log(formData)
+            globalActions.setEditMode(false)
+        }
+    }
 
     return (
         <Styled.Form>
@@ -34,10 +54,10 @@ export const AnnotationForm = () => {
             </span>
             <span>
                 <select name="nonte-category"
-                    onChange={(e) => setFormData({ ...formData, category_id: e.target.value })}
+                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                     className="margin-right">
                     <option value="" disabled selected>Selecione uma categoria</option>
-                    {dataState.categories.map((category) => <option value={category.id}>{category.name}</option>)}
+                    {dataState.categories.map((category) => <option value={category.name}>{category.name}</option>)}
                 </select>
                 <CheckBox
                     label="Favorito"
@@ -56,9 +76,11 @@ export const AnnotationForm = () => {
                     onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                 />
             </span>
+            <span>
+                <Button onClick={() => globalActions.setEditMode(false)} type="button">Cancelar</Button>
+                <Button onClick={(e) => handleSubmit(e)} type="submit" primary="true">Enviar</Button>
+            </span>
 
-
-            
         </Styled.Form >
     )
 }
