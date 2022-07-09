@@ -6,7 +6,13 @@ export const Header = styled.header`
    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: ${theme.colors.primary}
+    color: ${theme.colors.primary};
+
+    .search-and-button-span {
+        display: flex;
+        flex-direction: row;
+        gap: ${theme.spacings.medium};
+    }
 
 
     `}

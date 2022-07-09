@@ -17,8 +17,8 @@ export const ContentHeader = () => {
                 <Heading>{state.selectedCategory || 'Todas'}</Heading>
                 <p>{state.searchInputValue ? `Buscando por "${state.searchInputValue}"` : 'Suas anotações'}</p>
             </span>
+            <span className='search-and-button-span'>
             <SearchInput id="search-input" onChange={(e) => actions.setSearchInputValue(e.target.value)} />
-            <span>
                 <LargeButton primary="true" onClick={() => actions.setEditMode(true)}>Adicionar</LargeButton>
             </span>
         </Styled.Header>

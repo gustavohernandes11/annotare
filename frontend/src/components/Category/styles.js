@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 export const Container = styled.div`
     ${({ theme, color = theme.colors.secondary, selected }) => css`
     font-size: ${theme.sizes.medium};
+    overflow-x: clip;
     align-items: center;
     padding: ${theme.spacings.small};
         color: ${theme.colors.primary};

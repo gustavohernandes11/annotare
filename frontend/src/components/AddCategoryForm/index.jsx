@@ -7,6 +7,7 @@ import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 import { useDataContext } from '../../hooks/useDataContext.jsx'
 
 export const AddCategoryForm = () => {
+    // eslint-disable-next-line no-unused-vars
     const [globalState, globalActions] = useGlobalContext();
     const [dataState, dataActions] = useDataContext();
     const [inputName, setInputName] = useState('');
@@ -29,7 +30,17 @@ export const AddCategoryForm = () => {
 
     return (
         <Styled.Container>
-            <Input name="input-category-name" onChange={(e) => setInputName(e.target.value)} id="input-category-name" placeholder="Categoria..." marginBottom="5px" padding="5px" />
+            <Input
+                type="text"
+                name="input-category-name"
+                maxLength='20'
+                minLength='3'
+                onChange={(e) => setInputName(e.target.value)}
+                id="input-category-name"
+                placeholder="Categoria..."
+                marginBottom="5px"
+                padding="5px"
+            />
             <IconButton type='button' onClick={() => globalActions.setAddCategoryMode(false)} size="35px">
                 <Trash width={15} height={15} />
             </IconButton>
