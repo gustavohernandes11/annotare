@@ -11,13 +11,18 @@ export const ContentBoard = () => {
     const [dataState] = useDataContext();
     const [globalState] = useGlobalContext();
     const [isPopoverActive, setIsPopoverActive] = useState(false)
+    const [filteredAnnotations, setFilteredAnnotations] = useState([])
 
-    const searchRegex = new RegExp(`${globalState.searchInputValue}`, 'gi')
-    const filterBySearch = (array) => array?.filter(e => e.content.search(searchRegex) !== -1)
-
-    const filterByCategory = (array) => array.filter(e => e.category === globalState.selectedCategory)
-
-    console.log(filterBySearch(dataState.annotations))
+    
+    useEffect(() => {
+        const searchRegex = new RegExp(`${globalState.searchInputValue}`, 'gi')
+        const filterBySearch = (array) => array?.filter(e => e.content.search(searchRegex) !== -1)
+        
+        const filterByCategory = (array) => array.filter(e => globalState.selectedCategory ? e.category === globalState.selectedCategory : e)
+        
+        setFilteredAnnotations(() => filterByCategory(filterBySearch(dataState.annotations)))
+        
+    }, [dataState.annotations, globalState.searchInputValue, globalState.selectedCategory]);
     return (
         <>
             <Styled.Container style={{
@@ -28,9 +33,17 @@ export const ContentBoard = () => {
                 <Card heading="Anotação de teste: Objeto global">
                     {JSON.stringify(globalState)}
                 </Card>
-                {filterByCategory(filterBySearch(dataState.annotations))?.map(annotation => <Card key={annotation.id} heading={annotation.heading}>
+                {filteredAnnotations?.map(annotation => <Card
+                    key={annotation.id}
+                    heading={annotation.heading}
+                    createdAt={annotation.created_at}
+                    category={annotation.category}
+                    >
+                        
                     {annotation.content}
-                </Card>)}
+                </Card>)
+                }
+                {filteredAnnotations.length === 0 && <p>Nenhum resultado</p>}
             </Styled.Container>
             {isPopoverActive && <Popover
                 mensage="Atenção. Obrigado pela atenção"

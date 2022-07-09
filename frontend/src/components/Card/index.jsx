@@ -5,7 +5,7 @@ import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
 import { CardFooter } from './CardFooter'
 
-export const Card = ({ heading, children, color }) => {
+export const Card = ({ heading, children, color, category, createdAt }) => {
     const [isActive, setIsActive] = useState(false)
 
     return (
@@ -21,8 +21,8 @@ export const Card = ({ heading, children, color }) => {
                     <p>{children}</p>
                 </CardBody>
                 <CardFooter>
-                    <span>Lorem ipsum</span>
-                    <span>12/03/1976</span>
+                    <span>{category}</span>
+                    <span>{createdAt}</span>
                 </CardFooter>
             </Styled.Container>
         </>
