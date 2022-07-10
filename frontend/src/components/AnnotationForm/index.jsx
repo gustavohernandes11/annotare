@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react'
 import * as Styled from './styles.js'
 import { Input } from '../Input'
@@ -17,7 +19,6 @@ const initialFormData = {
 
 export const AnnotationForm = () => {
     const [dataState, dataActions] = useDataContext();
-    // eslint-disable-next-line no-unused-vars
     const [globalState, globalActions] = useGlobalContext();
     const [formData, setFormData] = useState(initialFormData);
 
@@ -48,7 +49,8 @@ export const AnnotationForm = () => {
                 console.log(formData)
                 globalActions.setEditMode(false)
             } else {
-                dataActions.addNewAnnotation({ ...formData, id: +(Math.random() * 100000000).toFixed() })
+                dataActions.removeAnnotation(formData)
+                dataActions.addNewAnnotation({ ...formData })
                 console.log(formData)
                 globalActions.setEditMode(false)
             }

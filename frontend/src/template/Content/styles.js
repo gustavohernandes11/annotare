@@ -6,7 +6,8 @@ export const Container = styled.div`
     flex-direction: column;
     padding-top: ${theme.spacings.medium};
     padding-inline: ${theme.spacings.xlarge};
-    background: ${theme.colors.backgroundPrimary};
+    background: ${theme.name === 'light' ? '#e3e3e3' : theme.backgroundPrimary};
+    
     overflow-y: scroll;
     height: 100vh;
     `}

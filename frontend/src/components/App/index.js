@@ -12,7 +12,7 @@ import { DataContextProvider } from '../../contexts/dataContext/DataContextProvi
 import { Editor } from '../Editor/index.jsx';
 
 function App() {
-  const [globalState, globalActions] = useGlobalContext()
+  const [globalState] = useGlobalContext()
   return (
       <Theme>
         <Hidden/>

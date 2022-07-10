@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as Styled from './styles.js'
 import P from 'prop-types'
 import { IconButton } from '../../IconButton/index.jsx'
@@ -11,7 +12,6 @@ const sizeProps = {
 }
 
 export const CardHeader = ({ isActive, data }) => {
-    // eslint-disable-next-line no-unused-vars
     const [dataState, dataActions] = useDataContext();
     const [globalState, globalActions] = useGlobalContext();
 

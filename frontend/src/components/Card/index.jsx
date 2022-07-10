@@ -7,7 +7,7 @@ import { CardFooter } from './CardFooter'
 
 export const Card = ({ heading, children, color, category, createdAt, data }) => {
     const [isActive, setIsActive] = useState(false);
-    const [isFullScreen, setIsFullScreen] = useState(false)
+    // const [isFullScreen, setIsFullScreen] = useState(false)
 
     return (
         <>
