@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import * as Styled from './styles.js'
 import P from 'prop-types'
-import { CardHeader } from './CardHeader'
-import { CardBody } from './CardBody'
 import { CardFooter } from './CardFooter'
+import { CardBody } from './CardBody'
+import { CardHeader } from './CardHeader'
 
 export const Card = ({ heading, children, color, category, createdAt, data }) => {
     const [isActive, setIsActive] = useState(false);
@@ -31,16 +31,17 @@ export const Card = ({ heading, children, color, category, createdAt, data }) =>
                 onMouseLeave={() => setIsActive(() => false)}
 
             >
-                <CardFooter>
+                <CardHeader>
                     <span>{category}</span>
                     <span>{createdAt}</span>
-                </CardFooter>
-                <CardBody
-                >
+                </CardHeader>
+                <CardBody>
                     <h3>{heading}</h3>
                     <p>{children}</p>
                 </CardBody>
-                <CardHeader data={data} isActive={isActive} />
+                <CardFooter data={data} isActive={isActive}>
+
+                </CardFooter>
             </Styled.Container>
         </>
     )

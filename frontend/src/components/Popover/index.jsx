@@ -4,14 +4,17 @@ import { Button } from '../Button/index.jsx'
 
 export const Popover = ({ heading = "Atenção", mensage, cancelFunction, acceptFunction }) => {
     return (
-        <Styled.Container>
-            <h1>{heading}</h1>
-            <p>{mensage}</p>
-            <span>
-                {cancelFunction && <Button onClick={cancelFunction}>Cancel</Button>}
-                {acceptFunction && <Button onClick={acceptFunction} primary>That's ok!</Button>}
-            </span>
-        </Styled.Container>
+        <>
+            <Styled.ClickAway />
+            <Styled.Container>
+                <h1>{heading}</h1>
+                <p>{mensage}</p>
+                <span>
+                    {cancelFunction && <Button onClick={cancelFunction}>Cancelar</Button>}
+                    {acceptFunction && <Button onClick={acceptFunction} primary>Continuar</Button>}
+                </span>
+            </Styled.Container>
+        </>
     )
 }
 

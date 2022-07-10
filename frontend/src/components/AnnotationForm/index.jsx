@@ -5,7 +5,7 @@ import * as Styled from './styles.js'
 import { Input } from '../Input'
 // import P from 'prop-types'
 import { Button } from '../Button'
-import { CheckBox } from '../CheckBox'
+// import { CheckBox } from '../CheckBox'
 import { useDataContext } from '../../hooks/useDataContext.jsx'
 import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 
@@ -82,12 +82,12 @@ export const AnnotationForm = () => {
                         {category.name}
                     </option>)}
                 </select>
-                <CheckBox
+                {/* <CheckBox
                     label="Favorito"
                     name="Favorite"
                     value={true}
                     onChange={(e) => setFormData({ ...formData, favorite: e.target.value })}
-                    width={`fit-content`} />
+                    width={`fit-content`} /> */}
             </span>
             <label htmlFor="note-content">Mensagem</label>
             <span>

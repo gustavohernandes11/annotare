@@ -11,6 +11,8 @@ export const darkTheme = {
         grey: '#909090',
         border: '#404040',
 
+        danger: '#df4759',
+
 
     },
     spacings: {
@@ -45,6 +47,9 @@ export const lightTheme = {
         grey: '#404040',
         border: '#b5b8bd',
 
+        danger: '#df4759',
+
+
 
     },
     spacings: {
@@ -76,6 +81,9 @@ export const rainbowTheme = {
         black: '#121212',
         grey: '#909090',
         border: 'rgb(255, 255, 255, 0.2)',
+
+        danger: '#df4759',
+
 
 
     },

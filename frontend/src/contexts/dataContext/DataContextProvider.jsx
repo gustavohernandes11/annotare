@@ -3,18 +3,34 @@ import P from 'prop-types'
 import { mockData } from './mockData'
 
 export const DataContext = createContext()
+
+
 const reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NEW_CATEGORY':
-            return { ...state, categories: [...state.categories, {...action.payload}] }
+            let newState = { ...state, categories: [...state.categories, { ...action.payload }] }
+            localStorage.setItem('storagedData', JSON.stringify(newState))
+            return { ...newState }
+
         case 'ADD_NEW_ANNOTATION':
-            return { ...state, annotations: [...state.annotations, {...action.payload}] }
+            let newStateWithAnnotation = { ...state, annotations: [...state.annotations, { ...action.payload }] }
+            localStorage.setItem('storagedData', JSON.stringify(newStateWithAnnotation))
+            return { ...newStateWithAnnotation }
+
         case 'REMOVE_CATEGORY':
-            return { ...state }
+            let categoryToBeRemoved = action.payload
+            let filteredAnnotations = state.annotations.filter((n) => n.category !== categoryToBeRemoved)
+            let filteredCategories = state.categories.filter((c) => c.name !== categoryToBeRemoved)
+
+            let newStateWithoutThatCategory = { ...state, annotations: filteredAnnotations, categories: filteredCategories}
+            localStorage.setItem('storagedData', JSON.stringify(newStateWithoutThatCategory))
+            return { ...newStateWithoutThatCategory }
+
         case 'REMOVE_ANNOTATION':
             let newAnnotations = state.annotations.filter((n) => n.id !== action.payload.id)
-            console.log({...state, newAnnotations})
-            return {...state, annotations: newAnnotations}
+            let newStateWithoutThatAnnotation = { ...state, annotations: newAnnotations }
+            localStorage.setItem('storagedData', JSON.stringify(newStateWithoutThatAnnotation))
+            return { ...newStateWithoutThatAnnotation }
 
         default:
             return { ...state }
@@ -22,7 +38,8 @@ const reducer = (state, action) => {
 }
 
 export const DataContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, mockData)
+    let storagedData = JSON.parse(localStorage.getItem('storagedData'))
+    const [state, dispatch] = useReducer(reducer, storagedData || mockData)
 
     const buildActions = (dispatch) => {
         return {

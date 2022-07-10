@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import * as Styled from './styles.js'
 import { Card } from '../Card/index.jsx'
 
-import { Popover } from '../Popover/index.jsx'
 import { useDataContext } from '../../hooks/useDataContext.jsx'
 import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 
@@ -10,7 +9,6 @@ import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 export const ContentBoard = () => {
     const [dataState] = useDataContext();
     const [globalState] = useGlobalContext();
-    const [isPopoverActive, setIsPopoverActive] = useState(false)
     const [filteredAnnotations, setFilteredAnnotations] = useState([])
 
     useEffect(() => {
@@ -34,9 +32,9 @@ export const ContentBoard = () => {
                     ? 'repeat(auto-fill, minmax(280px, 1fr))'
                     : '1fr'
             }}>
-                {/* <Card heading="Anotação de teste: Objeto global">
+                <Card heading="Anotação de teste: Objeto global">
                     {JSON.stringify(globalState)}
-                </Card> */}
+                </Card>
                 {filteredAnnotations?.map(annotation => <Card
                     key={annotation.id}
                     id={annotation.id}
@@ -51,10 +49,7 @@ export const ContentBoard = () => {
                 }
                 {filteredAnnotations.length === 0 && <p>Nenhum resultado</p>}
             </Styled.Container>
-            {isPopoverActive && <Popover
-                mensage="Atenção. Obrigado pela atenção"
-                acceptFunction={() => setIsPopoverActive(() => false)}
-                cancelFunction={() => setIsPopoverActive(() => false)} />}
+            
         </>
     )
 }

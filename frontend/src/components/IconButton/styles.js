@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const Container = styled.button`
     ${({ theme, size="40px" }) => css`
 
-
+    
     display: flex;
     background-color: ${theme.colors.backgroundTertiary};
     justify-content: center;
