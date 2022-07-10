@@ -3,11 +3,10 @@ import styled, { css } from 'styled-components'
 export const Container = styled.main`
     ${({ theme, color = theme.colors.secondary }) => css`
         padding: ${theme.spacings.small} ${theme.spacings.medium};
-        flex-grow: 1;
 
         > p, h3 {
             display: -webkit-box;
-        -webkit-line-clamp: 8;
+        /* -webkit-line-clamp: 5; */
         text-align: justify;
         -webkit-box-orient: vertical;  
         overflow: hidden; 

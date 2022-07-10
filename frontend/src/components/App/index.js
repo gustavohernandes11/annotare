@@ -11,7 +11,6 @@ import { useGlobalContext } from '../../hooks/useGlobalContext'
 import { DataContextProvider } from '../../contexts/dataContext/DataContextProvider'
 import { Editor } from '../Editor/index.jsx';
 
-
 function App() {
   const [globalState, globalActions] = useGlobalContext()
   return (

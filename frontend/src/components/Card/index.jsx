@@ -5,42 +5,42 @@ import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
 import { CardFooter } from './CardFooter'
 
-export const Card = ({ heading, children, color, category, createdAt }) => {
+export const Card = ({ heading, children, color, category, createdAt, id }) => {
     const [isActive, setIsActive] = useState(false);
     const [isFullScreen, setIsFullScreen] = useState(false)
 
     return (
         <>
+
             <Styled.Container
                 // style={{
-                //     // position: isFullScreen ? 'relative' : 'inherit',
-                //     flexGrow: isFullScreen ? '3' : 'inherit',
-                //     // top: isFullScreen ? '-50%' : 'inherit',
-                //     // right: isFullScreen ? '-50%' : 'inherit',
+                //     position: isFullScreen ? 'absolute' : 'inherit',
                 //     zIndex: isFullScreen ? '99' : 'inherit',
-                //     //  width: isFullScreen ? '200%' : 'inherit',
-                //     //  height: isFullScreen ? '200%' : 'inherit',
+                //     // top: isFullScreen ? '30%' : 'inherit',
+                //     WebkitLineClamp: isFullScreen ? 'none' : 'inherit',
+                //     width: isFullScreen ? '50%' : 'inherit',
+                //     height: isFullScreen ? '30%' : 'inherit',
+                //     alignSelf: isFullScreen ? 'center' : 'inherit',
+                //     justifySelf: isFullScreen ? 'center' : 'inherit',
                 //     overflowY: isFullScreen ? 'auto' : 'inherit',
-                    
-                // }}
 
+                // }}
                 fallback={<p>...</p>}
                 color={color}
                 onMouseEnter={() => setIsActive(() => true)}
                 onMouseLeave={() => setIsActive(() => false)}
-                
+
             >
-                <CardHeader isActive={isActive} />
-                <CardBody
-                onClick={() => setIsFullScreen(() => !isFullScreen)}
-                >
-                    <h3>{heading}</h3>
-                    <p>{children}</p>
-                </CardBody>
                 <CardFooter>
                     <span>{category}</span>
                     <span>{createdAt}</span>
                 </CardFooter>
+                <CardBody
+                >
+                    <h3>{heading}</h3>
+                    <p>{children}</p>
+                </CardBody>
+                <CardHeader id={id} isActive={isActive} />
             </Styled.Container>
         </>
     )

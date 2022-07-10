@@ -23,25 +23,31 @@ export const AnnotationForm = () => {
 
     useEffect(() => {
         setFormData({ ...formData, category: globalState.selectedCategory })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
+        if (globalState.selectedAnnotation) {
+            setFormData({ ...globalState.selectedAnnotation })
+
+        }
         console.log(formData)
 
-    }, [formData]);
+    }, [formData, globalState.selectedAnnotation]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!formData.id) {
-            setFormData({ ...formData, id: Date.now() })
-        }
         if (!formData.category) {
             return new Error('Escolha uma categoria!');
         } else {
-            dataActions.addNewAnnotation(formData)
-            console.log(formData)
-            globalActions.setEditMode(false)
+            if (formData.id === null) {
+                dataActions.addNewAnnotation({ ...formData, id: +(Math.random() * 100000000).toFixed() })
+                console.log(formData)
+                globalActions.setEditMode(false)
+            } else {
+                dataActions.addNewAnnotation({ ...formData, id: +(Math.random() * 100000000).toFixed() })
+                console.log(formData)
+                globalActions.setEditMode(false)
+            }
         }
     }
 

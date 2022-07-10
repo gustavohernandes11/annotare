@@ -13,15 +13,19 @@ export const ContentBoard = () => {
     const [isPopoverActive, setIsPopoverActive] = useState(false)
     const [filteredAnnotations, setFilteredAnnotations] = useState([])
 
-    
+    useEffect(() => {
+        console.log(dataState)
+    }, [dataState])
+
+
     useEffect(() => {
         const searchRegex = new RegExp(`${globalState.searchInputValue}`, 'gi')
         const filterBySearch = (array) => array?.filter(e => e.content.search(searchRegex) !== -1)
-        
+
         const filterByCategory = (array) => array.filter(e => globalState.selectedCategory ? e.category === globalState.selectedCategory : e)
-        
+
         setFilteredAnnotations(() => filterByCategory(filterBySearch(dataState.annotations)))
-        
+
     }, [dataState.annotations, globalState.searchInputValue, globalState.selectedCategory]);
     return (
         <>
@@ -35,11 +39,12 @@ export const ContentBoard = () => {
                 </Card> */}
                 {filteredAnnotations?.map(annotation => <Card
                     key={annotation.id}
+                    id={annotation.id}
                     heading={annotation.heading}
                     createdAt={annotation.created_at}
                     category={annotation.category}
-                    >
-                        
+                >
+
                     {annotation.content}
                 </Card>)
                 }
