@@ -14,6 +14,7 @@ import P from 'prop-types'
 
 export const ContentHeader = () => {
     const [globalState, globalActions] = useGlobalContext();
+    // eslint-disable-next-line no-unused-vars
     const [dataState, dataActions] = useDataContext();
     const [isPopoverActive, setIsPopoverActive] = useState();
 
@@ -22,8 +23,9 @@ export const ContentHeader = () => {
         globalActions.setEditMode(true);
         globalActions.setSelectedAnnotation(null);
     }
-    const handleAccept = () => {
-        dataActions.removeCategory(globalState.selectedCategory);
+    const handleAccept = async () => {
+        await dataActions.removeCategory(globalState.selectedCategory);
+        globalActions.setSelectedCategory(null);
         setIsPopoverActive(false);
 
 

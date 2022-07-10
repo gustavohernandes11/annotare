@@ -1,5 +1,5 @@
 import { IconButton } from '../../components/IconButton/index.jsx'
-import {  Heart, ListAlt, Moon, Lightbulb } from '@styled-icons/fa-regular'
+import { ListAlt, Moon, Lightbulb } from '@styled-icons/fa-regular'
 import { Th, ThList, Rainbow } from '@styled-icons/fa-solid'
 import { } from '@styled-icons/fa-brands'
 import * as Styled from './styles.js'
@@ -14,10 +14,8 @@ export const AsideBar = () => {
     return (
         <Styled.Container>
             <span>
-                <img src={Logo} alt="Logo" />
+                 <IconButton><ListAlt title="Favorites" /></IconButton>
                 <hr />
-                <IconButton><Heart title="Favorites" /></IconButton>
-                <IconButton><ListAlt title="All notes" /></IconButton>
             </span>
             <span>
 

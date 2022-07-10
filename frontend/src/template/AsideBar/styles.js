@@ -15,6 +15,9 @@ export const Container = styled.nav`
         background: ${theme.name === 'rainbow' ? `${theme.colors.secondary}` : `${theme.colors.backgroundSecondary}` }; 
         
 
+         img {
+            width: 90%
+        }
         button {
             border: ${theme.name === 'rainbow' || 'light' ? `1px solid ${theme.colors.border}` : 'none'};
         }

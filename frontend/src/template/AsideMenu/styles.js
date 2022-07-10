@@ -9,6 +9,8 @@ export const Container = styled.aside`
     background-color: ${theme.colors.backgroundSecondary} ;
     font-size: ${theme.sizes.small};
     color: ${theme.colors.primary};
+    overflow-y: auto;
+    height: 100vh;
     
     box-shadow: 4px 4px 10px rgb(0, 0, 0, .1);
 

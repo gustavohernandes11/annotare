@@ -17,11 +17,7 @@ export const Container = styled.div`
             background-color: ${theme.colors.backgroundTertiary};
             box-shadow: 4px 2px 10px rgba(0,0,0, .10);
             cursor: pointer;
-            &::before {
-            content: '• ';
-            color: ${color};
-            transition: all 0.35s ease-in-out;
-        }
+            
 
         }
 
