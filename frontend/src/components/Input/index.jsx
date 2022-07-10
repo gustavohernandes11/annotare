@@ -1,9 +1,10 @@
 import * as Styled from './styles.js'
 import P from 'prop-types'
 
-export const Input = ({ maxLength, minLength = '3', value, id, onChange, onClick, type, placeholder, width, height, marginBottom, padding, name, as }) => {
+export const Input = ({ defaultValue, maxLength, minLength = '3', value, id, onChange, onClick, type, placeholder, width, height, marginBottom, padding, name, as }) => {
     return (
         <Styled.Input
+            defaultValue={defaultValue}
             maxLength={maxLength}
             minLength={minLength}
             autocomplete="off"

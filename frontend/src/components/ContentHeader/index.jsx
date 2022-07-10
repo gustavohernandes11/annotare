@@ -11,6 +11,12 @@ import P from 'prop-types'
 export const ContentHeader = () => {
     // const input = useRef(searchInput)
     const [state, actions] = useGlobalContext();
+
+    const handleClick = () => {
+        actions.setEditMode(true)
+        actions.setSelectedAnnotation(null)
+    }
+
     return (
         <Styled.Header>
             <span>
@@ -18,8 +24,8 @@ export const ContentHeader = () => {
                 <p>{state.searchInputValue ? `Buscando por "${state.searchInputValue}"` : 'Suas anotações'}</p>
             </span>
             <span className='search-and-button-span'>
-            <SearchInput id="search-input" onChange={(e) => actions.setSearchInputValue(e.target.value)} />
-                <LargeButton primary="true" onClick={() => actions.setEditMode(true)}>Adicionar</LargeButton>
+                <SearchInput id="search-input" onChange={(e) => actions.setSearchInputValue(e.target.value)} />
+                <LargeButton primary="true" onClick={handleClick}>Adicionar</LargeButton>
             </span>
         </Styled.Header>
     )

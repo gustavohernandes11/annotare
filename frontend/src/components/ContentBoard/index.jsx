@@ -43,6 +43,7 @@ export const ContentBoard = () => {
                     heading={annotation.heading}
                     createdAt={annotation.created_at}
                     category={annotation.category}
+                    data={annotation}
                 >
 
                     {annotation.content}

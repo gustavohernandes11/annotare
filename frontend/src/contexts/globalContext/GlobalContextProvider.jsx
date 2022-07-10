@@ -14,6 +14,9 @@ const reducer = (state, action) => {
         case 'SET_SELECTED_CATEGORY':
             return { ...state, selectedCategory: action.payload };
 
+        case 'SET_SELECTED_ANNOTATION':
+            return { ...state, selectedAnnotation: action.payload };
+
         case 'SET_ADD_CATEGORY_MODE':
             return { ...state, addCategoryMode: action.payload };
 
@@ -65,6 +68,7 @@ export const GlobalContextProvider = ({ children }) => {
             setAddCategoryMode: (payload) => { dispatch({ type: "SET_ADD_CATEGORY_MODE", payload }) },
             setSelectedCategory: (payload) => { dispatch({ type: "SET_SELECTED_CATEGORY", payload }) },
             setSearchInputValue: (payload) => { dispatch({ type: "SET_SEARCH_INPUT_VALUE", payload }) },
+            setSelectedAnnotation: (payload) => { dispatch({ type: "SET_SELECTED_ANNOTATION", payload }) }
         }
     }
     const actions = buildActions(dispatch)

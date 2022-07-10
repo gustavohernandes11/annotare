@@ -27,13 +27,17 @@ export const AnnotationForm = () => {
 
     useEffect(() => {
         if (globalState.selectedAnnotation) {
-            setFormData({ ...globalState.selectedAnnotation })
+            setFormData(globalState.selectedAnnotation)
 
         }
         console.log(formData)
 
-    }, [formData, globalState.selectedAnnotation]);
+    }, []);
 
+    const handleCancel = () => {
+        globalActions.setEditMode(false)
+        globalActions.setSelectedAnnotation(null)
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!formData.category) {
@@ -57,6 +61,7 @@ export const AnnotationForm = () => {
             <span>
                 <Input
                     name="note-title"
+                    defaultValue={globalState.selectedAnnotation?.heading || ''}
                     maxLength="100"
                     placeholder="..."
                     onChange={(e) => setFormData({ ...formData, heading: e.target.value })}
@@ -69,7 +74,7 @@ export const AnnotationForm = () => {
                     <option value="" disabled selected={globalState.selectedCategory === null}>Selecione uma categoria</option>
 
                     {dataState.categories.map((category) => <option
-                        selected={globalState.selectedCategory === category.name}
+                        selected={globalState.selectedAnnotation?.category === category.name || globalState.selectedCategory === category.name}
                         value={category.name}
                     >
                         {category.name}
@@ -91,10 +96,12 @@ export const AnnotationForm = () => {
                     as="textarea"
                     placeholder="..."
                     onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                    defaultValue={globalState.selectedAnnotation?.content || ''}
+
                 />
             </span>
             <span>
-                <Button onClick={() => globalActions.setEditMode(false)} type="button">Cancelar</Button>
+                <Button onClick={() => handleCancel()} type="button">Cancelar</Button>
                 <Button onClick={(e) => handleSubmit(e)} type="submit" primary="true">Enviar</Button>
             </span>
 

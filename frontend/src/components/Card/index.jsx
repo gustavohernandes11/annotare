@@ -5,7 +5,7 @@ import { CardHeader } from './CardHeader'
 import { CardBody } from './CardBody'
 import { CardFooter } from './CardFooter'
 
-export const Card = ({ heading, children, color, category, createdAt, id }) => {
+export const Card = ({ heading, children, color, category, createdAt, data }) => {
     const [isActive, setIsActive] = useState(false);
     const [isFullScreen, setIsFullScreen] = useState(false)
 
@@ -40,7 +40,7 @@ export const Card = ({ heading, children, color, category, createdAt, id }) => {
                     <h3>{heading}</h3>
                     <p>{children}</p>
                 </CardBody>
-                <CardHeader id={id} isActive={isActive} />
+                <CardHeader data={data} isActive={isActive} />
             </Styled.Container>
         </>
     )

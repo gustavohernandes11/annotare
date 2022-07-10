@@ -12,7 +12,7 @@ const reducer = (state, action) => {
         case 'REMOVE_CATEGORY':
             return { ...state }
         case 'REMOVE_ANNOTATION':
-            let newAnnotations = state.annotations.filter((n) => n.id !== action.payload)
+            let newAnnotations = state.annotations.filter((n) => n.id !== action.payload.id)
             console.log({...state, newAnnotations})
             return {...state, annotations: newAnnotations}
 

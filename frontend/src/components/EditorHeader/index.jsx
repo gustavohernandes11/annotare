@@ -7,13 +7,22 @@ import P from 'prop-types'
 export const EditorHeader = () => {
     const [state, actions] = useGlobalContext();
 
+    const handleCancel = () => {
+        actions.setEditMode(false)
+        actions.setSelectedAnnotation(null)
+    }
+
     return (
         <Styled.Header>
             <span>
-            <Heading>Criação e edição</Heading>
-            <p>Editando anotação de "Math"</p>
+                <Heading>Criação e edição</Heading>
+                <p>
+                    {state.selectedAnnotation
+                    ? `Editando anotação de ${state.selectedAnnotation.category}`
+                    : `Adicionar anotação`}
+                    </p>
             </span>
-                <LargeButton onClick={() => actions.setEditMode(false)} >Voltar</LargeButton>
+            <LargeButton onClick={handleCancel} >Voltar</LargeButton>
         </Styled.Header>
     )
 }
