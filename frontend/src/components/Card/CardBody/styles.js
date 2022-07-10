@@ -14,9 +14,9 @@ export const Container = styled.main`
         text-overflow: ellipsis;
         line-break: anywhere;
         }
-        
+
         > h3 {
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 2;
 
 
     }

@@ -11,5 +11,7 @@ export const Container = styled.div`
         transition: opacity ease-in-out 0.5s;
         height: 300px;
         box-shadow: 4px 2px 10px rgba(0,0,0, .10);
+
+    
     `}
 `;
