@@ -8,6 +8,7 @@ import { Footer } from '../../components/Footer'
 export const Content = () => {
     return (
         <Styled.Container>
+            
             <ContentHeader />
             <ContentBoard />
             <Footer />

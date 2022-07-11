@@ -8,6 +8,8 @@ import { Button } from '../Button'
 // import { CheckBox } from '../CheckBox'
 import { useDataContext } from '../../hooks/useDataContext.jsx'
 import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
+import { toast } from 'react-toastify';
+
 
 const initialFormData = {
     id: null,
@@ -42,17 +44,20 @@ export const AnnotationForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!formData.category) {
-            return new Error('Escolha uma categoria!');
+            toast.warn('Escolha uma categoria')
         } else {
             if (formData.id === null) {
                 dataActions.addNewAnnotation({ ...formData, id: +(Math.random() * 100000000).toFixed() })
                 console.log(formData)
                 globalActions.setEditMode(false)
+                toast.success('Anotado!')
+
             } else {
                 dataActions.removeAnnotation(formData)
                 dataActions.addNewAnnotation({ ...formData })
                 console.log(formData)
                 globalActions.setEditMode(false)
+
             }
         }
     }

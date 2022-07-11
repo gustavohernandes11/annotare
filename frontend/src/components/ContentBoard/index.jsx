@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import * as Styled from './styles.js'
 import { Card } from '../Card/index.jsx'
 
+
 import { useDataContext } from '../../hooks/useDataContext.jsx'
 import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 
@@ -11,9 +12,6 @@ export const ContentBoard = () => {
     const [globalState] = useGlobalContext();
     const [filteredAnnotations, setFilteredAnnotations] = useState([])
 
-    useEffect(() => {
-        console.log(dataState)
-    }, [dataState])
 
 
     useEffect(() => {
@@ -28,6 +26,7 @@ export const ContentBoard = () => {
     return (
         <>
             <Styled.Container style={{
+
                 gridTemplateColumns: globalState.activeLayout === 'grid'
                     ? 'repeat(auto-fill, minmax(280px, 1fr))'
                     : '1fr'
@@ -46,7 +45,7 @@ export const ContentBoard = () => {
                 }
                 {filteredAnnotations.length === 0 && <p>Nenhum resultado</p>}
             </Styled.Container>
-            
+
         </>
     )
 }

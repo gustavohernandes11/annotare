@@ -5,6 +5,8 @@ import { IconButton } from '../../IconButton/index.jsx'
 import { Expand, TrashAlt, PencilAlt } from '@styled-icons/fa-solid'
 import { useDataContext } from '../../../hooks/useDataContext.jsx'
 import { useGlobalContext } from '../../../hooks/useGlobalContext.jsx'
+import { toast } from 'react-toastify';
+
 
 const sizeProps = {
     widht: 15,
@@ -19,15 +21,25 @@ export const CardFooter = ({ isActive, data }) => {
     const handleEdit = () => {
         globalActions.setSelectedAnnotation(data);
         globalActions.setEditMode(true);
+
+    }
+
+    const handleRemove = async () => {
+        try {
+            await dataActions.removeAnnotation(data);
+            toast.success('Anotação removida.')
+        } catch {
+            toast.error('Houve um erro inesperado.')
+        }
     }
 
     return (
         <Styled.Container style={{ opacity: isActive ? '1' : '0' }}>
             <span>
-                <IconButton disabled >
+                {/* <IconButton disabled >
                     <Expand {...sizeProps} />
-                </IconButton>
-                <IconButton onClick={() => dataActions.removeAnnotation(data)}>
+                </IconButton> */}
+                <IconButton onClick={handleRemove}>
                     <TrashAlt {...sizeProps} />
                 </IconButton>
                 <IconButton onClick={handleEdit}>

@@ -5,6 +5,8 @@ import { IconButton } from '../IconButton'
 import { Plus, Trash } from '@styled-icons/fa-solid'
 import { useGlobalContext } from '../../hooks/useGlobalContext.jsx'
 import { useDataContext } from '../../hooks/useDataContext.jsx'
+import { toast } from 'react-toastify';
+
 
 export const AddCategoryForm = () => {
     // eslint-disable-next-line no-unused-vars
@@ -16,7 +18,7 @@ export const AddCategoryForm = () => {
         e.preventDefault();
         const repeatedNames = dataState.categories.filter(e => e.name === inputName.trim())
         if (repeatedNames.length > 0) {
-            throw new Error('Ja está em uso')
+            toast.warn('Essa categoria já existe.')
         } else {
             dataActions.addNewCategory({
                 name: inputName.trim(),
@@ -24,6 +26,8 @@ export const AddCategoryForm = () => {
                 color: 'grey'
             })
             globalActions.setAddCategoryMode(false);
+            toast.success('Categoria adicionada!')
+
         }
     }
 

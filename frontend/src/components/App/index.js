@@ -16,7 +16,6 @@ function App() {
     <Theme>
       <Hidden />
 
-      
       <div id="app">
         <Styled.Container>
           <AsideBar />

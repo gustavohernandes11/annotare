@@ -8,6 +8,8 @@ import { TrashAlt } from '@styled-icons/fa-solid'
 import { IconButton } from '../IconButton'
 import { useGlobalContext } from '../../hooks/useGlobalContext'
 import { useDataContext } from '../../hooks/useDataContext'
+import { toast } from 'react-toastify';
+
 
 import P from 'prop-types'
 
@@ -24,9 +26,14 @@ export const ContentHeader = () => {
         globalActions.setSelectedAnnotation(null);
     }
     const handleAccept = async () => {
-        await dataActions.removeCategory(globalState.selectedCategory);
-        globalActions.setSelectedCategory(null);
-        setIsPopoverActive(false);
+        try {
+            await dataActions.removeCategory(globalState.selectedCategory);
+            globalActions.setSelectedCategory(null);
+            setIsPopoverActive(false);
+            toast.success('Categoria deletada.')
+        } catch(e) {
+            toast.error('Houve um erro inesperado!')
+        }
 
 
     }

@@ -3,7 +3,6 @@ import { ListAlt, Moon, Lightbulb } from '@styled-icons/fa-regular'
 import { Th, ThList, Rainbow } from '@styled-icons/fa-solid'
 import { } from '@styled-icons/fa-brands'
 import * as Styled from './styles.js'
-import Logo from '../../assets/imgs/logo.png'
 import { GlobalContext } from '../../contexts/globalContext/GlobalContextProvider'
 import { useContext } from 'react'
 
