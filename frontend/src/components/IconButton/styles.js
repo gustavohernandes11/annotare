@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.button`
-  ${({ theme, size = "40px" }) => css`
+    ${({ theme, size = "40px" }) => css`
 
     
     display: flex;
@@ -24,8 +24,8 @@ export const Container = styled.button`
     }
     `}
 
-  > svg {
-    max-width: 20px;
-    max-height: 20px;
-  }
+    > svg {
+        max-width: 20px;
+        max-height: 20px;
+    }
 `;

@@ -5,28 +5,28 @@ import { useGlobalContext } from "../../hooks/useGlobalContext.jsx";
 import P from "prop-types";
 
 export const EditorHeader = () => {
-  const [state, actions] = useGlobalContext();
+    const [state, actions] = useGlobalContext();
 
-  const handleCancel = () => {
-    actions.setEditMode(false);
-    actions.setSelectedAnnotation(null);
-  };
+    const handleCancel = () => {
+        actions.setEditMode(false);
+        actions.setSelectedAnnotation(null);
+    };
 
-  return (
-    <Styled.Header>
-      <span>
-        <Heading>Criação e edição</Heading>
-        <p>
-          {state.selectedAnnotation
-            ? `Editando anotação de ${state.selectedAnnotation.category}`
-            : `Adicionar anotação`}
-        </p>
-      </span>
-      <LargeButton onClick={handleCancel}>Voltar</LargeButton>
-    </Styled.Header>
-  );
+    return (
+        <Styled.Header>
+            <span>
+                <Heading>Criação e edição</Heading>
+                <p>
+                    {state.selectedAnnotation
+                        ? `Editando anotação de ${state.selectedAnnotation.category}`
+                        : `Adicionar anotação`}
+                </p>
+            </span>
+            <LargeButton onClick={handleCancel}>Voltar</LargeButton>
+        </Styled.Header>
+    );
 };
 
 EditorHeader.propTypes = {
-  children: P.node,
+    children: P.node,
 };

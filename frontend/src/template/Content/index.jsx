@@ -4,11 +4,11 @@ import { ContentBoard } from "../../components/ContentBoard/index.jsx";
 import { Footer } from "../../components/Footer";
 
 export const Content = () => {
-  return (
-    <Styled.Container>
-      <ContentHeader />
-      <ContentBoard />
-      <Footer />
-    </Styled.Container>
-  );
+    return (
+        <Styled.Container>
+            <ContentHeader />
+            <ContentBoard />
+            <Footer />
+        </Styled.Container>
+    );
 };

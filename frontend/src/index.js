@@ -9,21 +9,21 @@ import { GlobalContextProvider } from "./contexts/globalContext/GlobalContextPro
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <GlobalContextProvider>
-      <App />
-    </GlobalContextProvider>
-    <ToastContainer
-      position="bottom-right"
-      autoClose={3500}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      limit={3}
-    />
-  </React.StrictMode>
+    <React.StrictMode>
+        <GlobalContextProvider>
+            <App />
+        </GlobalContextProvider>
+        <ToastContainer
+            position="bottom-right"
+            autoClose={3500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            limit={3}
+        />
+    </React.StrictMode>
 );

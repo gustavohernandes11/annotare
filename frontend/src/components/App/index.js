@@ -11,22 +11,23 @@ import { useGlobalContext } from "../../hooks/useGlobalContext";
 import { DataContextProvider } from "../../contexts/dataContext/DataContextProvider";
 import { Editor } from "../Editor/index.jsx";
 function App() {
-  const [globalState] = useGlobalContext();
-  return (
-    <Theme>
-      <Hidden />
-
-      <div id="app">
-        <Styled.Container>
-          <AsideBar />
-          <DataContextProvider>
-            <AsideMenu />
-            <span>{globalState.editMode ? <Editor /> : <Content />}</span>
-          </DataContextProvider>
-        </Styled.Container>
-      </div>
-    </Theme>
-  );
+    const [globalState] = useGlobalContext();
+    return (
+        <Theme>
+            <Hidden />
+            <div id="app">
+                <Styled.Container>
+                    <AsideBar />
+                    <DataContextProvider>
+                        <AsideMenu />
+                        <span>
+                            {globalState.editMode ? <Editor /> : <Content />}
+                        </span>
+                    </DataContextProvider>
+                </Styled.Container>
+            </div>
+        </Theme>
+    );
 }
 
 export default App;

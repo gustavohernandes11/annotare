@@ -5,27 +5,27 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0px;
+    margin: 0px;
 }
 body {
-  margin: 0;
-  font-family: century-gothic, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: century-gothic, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 #root,
 body,
 html,
 .app {
-  height: 100vh;
-  overflow-y: hidden;
+    height: 100vh;
+    overflow-y: hidden;
 }
 * {
-  box-sizing: border-box;
-  transition: background ease-in-out 0.1s;
+    box-sizing: border-box;
+    transition: background ease-in-out 0.1s;
 }

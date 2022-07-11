@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  ${({ theme, color = theme.colors.secondary, isfullscreen = false }) => css`
+    ${({ theme, color = theme.colors.secondary, isfullscreen = false }) => css`
         display: grid;
         direction: column-reverse;
         grid-template-rows: 40px 1fr 40px;

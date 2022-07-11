@@ -7,33 +7,33 @@ import { GlobalContext } from "../../contexts/globalContext/GlobalContextProvide
 import { useContext } from "react";
 
 export const AsideBar = () => {
-  const [globalState, globalActions] = useContext(GlobalContext);
+    const [globalState, globalActions] = useContext(GlobalContext);
 
-  return (
-    <Styled.Container>
-      <span>
-        <IconButton>
-          <ListAlt title="Favorites" />
-        </IconButton>
-        <hr />
-      </span>
-      <span>
-        <IconButton onClick={() => globalActions.changeLayout()}>
-          {globalState.activeLayout === "grid" ? (
-            <ThList title="Change Layout" />
-          ) : (
-            <Th title="Change Layout" />
-          )}
-        </IconButton>
-        <IconButton
-          title="Change theme"
-          onClick={() => globalActions.changeTheme()}
-        >
-          {globalState.activeTheme === "light" && <Rainbow />}
-          {globalState.activeTheme === "dark" && <Lightbulb />}
-          {globalState.activeTheme === "rainbow" && <Moon />}
-        </IconButton>
-      </span>
-    </Styled.Container>
-  );
+    return (
+        <Styled.Container>
+            <span>
+                <IconButton>
+                    <ListAlt title="Favorites" />
+                </IconButton>
+                <hr />
+            </span>
+            <span>
+                <IconButton onClick={() => globalActions.changeLayout()}>
+                    {globalState.activeLayout === "grid" ? (
+                        <ThList title="Change Layout" />
+                    ) : (
+                        <Th title="Change Layout" />
+                    )}
+                </IconButton>
+                <IconButton
+                    title="Change theme"
+                    onClick={() => globalActions.changeTheme()}
+                >
+                    {globalState.activeTheme === "light" && <Rainbow />}
+                    {globalState.activeTheme === "dark" && <Lightbulb />}
+                    {globalState.activeTheme === "rainbow" && <Moon />}
+                </IconButton>
+            </span>
+        </Styled.Container>
+    );
 };
