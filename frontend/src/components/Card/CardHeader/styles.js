@@ -1,12 +1,11 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 export const Container = styled.footer`
-    ${({ theme }) => css`
+  ${({ theme }) => css`
     display: flex;
     justify-content: space-between;
     font-size: ${theme.sizes.small};
-    color:  ${theme.colors.grey};
-    padding:${theme.spacings.small} ${theme.spacings.medium};
-    `}
-    
+    color: ${theme.colors.grey};
+    padding: ${theme.spacings.small} ${theme.spacings.medium};
+  `}
 `;

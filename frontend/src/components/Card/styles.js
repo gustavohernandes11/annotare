@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-    ${({ theme, color=theme.colors.secondary, isfullscreen=false }) => css`
+  ${({ theme, color = theme.colors.secondary, isfullscreen = false }) => css`
         display: grid;
         direction: column-reverse;
         grid-template-rows: 40px 1fr 40px;
@@ -18,7 +18,4 @@ export const Container = styled.div`
     `}
 `;
 
-export const Wrapper = styled.div`
-    
-
-`
+export const Wrapper = styled.div``;

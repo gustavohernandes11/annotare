@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 export const Container = styled.main`
-    ${({ theme }) => css`
+  ${({ theme }) => css`
     display: grid;
     width: 100%;
     flex-grow: 1;
@@ -10,11 +10,8 @@ export const Container = styled.main`
     padding-bottom: ${theme.spacings.large};
     gap: ${theme.spacings.small};
 
-     h3 {
-        margin-bottom:  ${theme.spacings.medium};
+    h3 {
+      margin-bottom: ${theme.spacings.medium};
     }
-
-
-    `}
-    
-`
+  `}
+`;

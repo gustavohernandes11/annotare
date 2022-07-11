@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 export const Header = styled.header`
-    ${({ theme }) => css`
+  ${({ theme }) => css`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -9,29 +9,25 @@ export const Header = styled.header`
     color: ${theme.colors.primary};
 
     .search-and-button-span {
-        display: flex;
-        flex-direction: row;
-        gap: ${theme.spacings.medium};
+      display: flex;
+      flex-direction: row;
+      gap: ${theme.spacings.medium};
     }
 
     .delete-category-icon {
-        border: none;
-        background-color: ${theme.colors.backgroundPrimary};
-        margin-bottom: 0;
-        path {
-            fill: ${theme.colors.grey};
-
-        }
+      border: none;
+      background-color: ${theme.colors.backgroundPrimary};
+      margin-bottom: 0;
+      path {
+        fill: ${theme.colors.grey};
+      }
     }
     .delete-category-icon:hover {
-        background-color: inherit;
-        margin-bottom: 0;
-        path {
-            fill:  ${theme.colors.danger};
-
-        }
+      background-color: inherit;
+      margin-bottom: 0;
+      path {
+        fill: ${theme.colors.danger};
+      }
     }
-
-
-    `}
-`
+  `}
+`;

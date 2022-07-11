@@ -1,9 +1,8 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 export const Container = styled.h1`
-    ${({ theme }) => css`
-        color: ${theme.colors.primary};
-        margin: 0px;
-    `}
-    
+  ${({ theme }) => css`
+    color: ${theme.colors.primary};
+    margin: 0px;
+  `}
 `;
