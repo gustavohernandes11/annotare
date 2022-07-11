@@ -14,7 +14,7 @@ export const Theme = ({ children }) => {
         setLoading(() => true);
         const storagedTheme = localStorage.getItem("storagedTheme");
         if (storagedTheme === null || undefined) {
-            localStorage.setItem("storagedTheme", "light");
+            localStorage.setItem("storagedTheme", "dark");
             globalActions.setTheme("dark");
         } else {
             globalActions.setTheme(storagedTheme);

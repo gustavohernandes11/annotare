@@ -42,6 +42,7 @@ export const ContentBoard = () => {
             >
                 {filteredAnnotations?.map((annotation) => (
                     <Card
+                        
                         key={annotation.id}
                         id={annotation.id}
                         heading={annotation.heading}

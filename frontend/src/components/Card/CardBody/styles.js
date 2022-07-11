@@ -7,12 +7,11 @@ export const Container = styled.main`
         > p,
         h3 {
             display: -webkit-box;
-            /* -webkit-line-clamp: 5; */
             text-align: justify;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-            line-break: anywhere;
+            white-space: pre-line;
         }
 
         > h3 {

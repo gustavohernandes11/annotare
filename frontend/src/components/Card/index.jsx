@@ -41,7 +41,7 @@ export const Card = ({
                     <span>{createdAt}</span>
                 </CardHeader>
                 <CardBody>
-                    <h3>{heading}</h3>
+                    {heading && <h3>{heading}</h3>}
                     <p>{children}</p>
                 </CardBody>
                 <CardFooter data={data} isActive={isActive}></CardFooter>
