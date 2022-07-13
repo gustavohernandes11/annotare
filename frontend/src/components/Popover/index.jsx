@@ -10,7 +10,7 @@ export const Popover = ({
 }) => {
     return (
         <>
-            <Styled.ClickAway />
+            <Styled.ClickAway onClick={cancelFunction} />
             <Styled.Container>
                 <h1>{heading}</h1>
                 <p>{mensage}</p>

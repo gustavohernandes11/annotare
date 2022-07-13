@@ -4,8 +4,7 @@ export const Container = styled.main`
     ${({ theme, color = theme.colors.secondary }) => css`
         padding: ${theme.spacings.small} ${theme.spacings.medium};
         overflow: hidden;
-        
-
+    
         > p,
         h3 {
             display: -webkit-box;

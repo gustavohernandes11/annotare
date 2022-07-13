@@ -1,9 +1,12 @@
 import { useState } from "react";
 import * as Styled from "./styles.js";
+import { ClickAway } from "../Popover/styles";
 import P from "prop-types";
 import { CardFooter } from "./CardFooter";
 import { CardBody } from "./CardBody";
 import { CardHeader } from "./CardHeader";
+import { Expand } from "@styled-icons/fa-solid";
+import { IconButton } from "./../IconButton/index";
 
 export const Card = ({
     heading,
@@ -14,23 +17,23 @@ export const Card = ({
     data,
 }) => {
     const [isActive, setIsActive] = useState(false);
-    // const [isFullScreen, setIsFullScreen] = useState(false)
+    const [isViewMode, setIsViewMode] = useState(false);
 
     return (
         <>
+            {isViewMode && <ClickAway onClick={() => setIsViewMode(false)} />}
             <Styled.Container
-                // style={{
-                //     position: isFullScreen ? 'absolute' : 'inherit',
-                //     zIndex: isFullScreen ? '99' : 'inherit',
-                //     // top: isFullScreen ? '30%' : 'inherit',
-                //     WebkitLineClamp: isFullScreen ? 'none' : 'inherit',
-                //     width: isFullScreen ? '50%' : 'inherit',
-                //     height: isFullScreen ? '30%' : 'inherit',
-                //     alignSelf: isFullScreen ? 'center' : 'inherit',
-                //     justifySelf: isFullScreen ? 'center' : 'inherit',
-                //     overflowY: isFullScreen ? 'auto' : 'inherit',
-
-                // }}
+                style={{
+                    position: isViewMode ? "absolute" : "inherit",
+                    zIndex: isViewMode ? "99" : "inherit",
+                    top: isViewMode ? "15%" : "inherit",
+                    WebkitLineClamp: isViewMode ? "none" : "inherit",
+                    width: isViewMode ? "60%" : "inherit",
+                    height: isViewMode ? "60%" : "inherit",
+                    alignSelf: isViewMode ? "center" : "inherit",
+                    justifySelf: isViewMode ? "center" : "inherit",
+                    overflowY: isViewMode ? "auto" : "inherit",
+                }}
                 fallback={<p>...</p>}
                 color={color}
                 onMouseEnter={() => setIsActive(() => true)}
@@ -44,7 +47,11 @@ export const Card = ({
                     {heading && <h3>{heading}</h3>}
                     <p>{children}</p>
                 </CardBody>
-                <CardFooter data={data} isActive={isActive}></CardFooter>
+                <CardFooter data={data} isActive={isActive}>
+                    <IconButton onClick={() => setIsViewMode(!isViewMode)}>
+                        <Expand width={15} height={15} />
+                    </IconButton>
+                </CardFooter>
             </Styled.Container>
         </>
     );

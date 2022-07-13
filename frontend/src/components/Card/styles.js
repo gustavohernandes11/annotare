@@ -8,7 +8,7 @@ export const Container = styled.div`
         color: ${theme.colors.primary};
         border: 1px solid ${theme.colors.border};
         border-radius: 5px;
-        transition: opacity ease-in-out 0.5s;
+        transition: position ease-in-out 0.5s;
         box-shadow: 4px 2px 10px rgba(0,0,0, .10);
     
     `}
