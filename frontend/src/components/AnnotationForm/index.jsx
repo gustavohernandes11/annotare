@@ -42,6 +42,7 @@ export const AnnotationForm = () => {
         e.preventDefault();
         if (!formData.category) {
             toast.warn("Escolha uma categoria");
+            toast.clearWaitingQueue();
         } else {
             if (formData.id === null) {
                 dataActions.addNewAnnotation({
@@ -50,7 +51,8 @@ export const AnnotationForm = () => {
                 });
                 console.log(formData);
                 globalActions.setEditMode(false);
-                toast.success("Anotado!");
+                toast.success("Anotado!", { toastId: "success-anoted-toast" });
+                toast.clearWaitingQueue();
             } else {
                 dataActions.removeAnnotation(formData);
                 dataActions.addNewAnnotation({ ...formData });
@@ -107,6 +109,7 @@ export const AnnotationForm = () => {
                     label="Favorito"
                     name="Favorite"
                     value={true}
+                    
                     onChange={(e) => setFormData({ ...formData, favorite: e.target.value })}
                     width={`fit-content`} /> */}
             </span>
