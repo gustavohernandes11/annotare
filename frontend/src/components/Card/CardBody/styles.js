@@ -24,6 +24,6 @@ export const Container = styled.main`
 
         > h3 {
             -webkit-line-clamp: ${isViewMode === true ? "unset" : 7};
-        }
+            margin-bottom: ${theme.spacings.small};
     `}
 `;

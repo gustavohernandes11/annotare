@@ -12,7 +12,7 @@ const sizeProps = {
     height: 15,
 };
 
-export const CardFooter = ({ children, isActive, data }) => {
+export const CardFooter = ({ children, isActive, data, isViewMode }) => {
     const [dataState, dataActions] = useDataContext();
     const [globalState, globalActions] = useGlobalContext();
 
@@ -31,9 +31,11 @@ export const CardFooter = ({ children, isActive, data }) => {
     };
 
     return (
-        <Styled.Container style={{ opacity: isActive ? "1" : "0" }}>
+        <Styled.Container
+            style={{ opacity: isActive || isViewMode ? "1" : "0" }}
+        >
+            <span>{children}</span>
             <span>
-                {children}
                 <IconButton onClick={handleRemove}>
                     <TrashAlt {...sizeProps} />
                 </IconButton>

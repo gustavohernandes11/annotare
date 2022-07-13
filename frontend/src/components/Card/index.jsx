@@ -7,6 +7,7 @@ import { CardBody } from "./CardBody";
 import { CardHeader } from "./CardHeader";
 import { Expand } from "@styled-icons/fa-solid";
 import { IconButton } from "./../IconButton/index";
+import { useGlobalContext } from '../../hooks/useGlobalContext'
 
 export const Card = ({
     heading,
@@ -18,25 +19,15 @@ export const Card = ({
 }) => {
     const [isActive, setIsActive] = useState(false);
     const [isViewMode, setIsViewMode] = useState(false);
+    const [globalState] = useGlobalContext();
+
 
     return (
         <>
             {isViewMode && <ClickAway onClick={() => setIsViewMode(false)} />}
             <Styled.Container
-                style={{
-                    position: isViewMode ? "absolute" : "inherit",
-                    zIndex: isViewMode ? "99" : "inherit",
-                    top: isViewMode ? "50%" : "inherit",
-                    width: isViewMode ? "60%" : "inherit",
-                    height: isViewMode ? "80%" : "inherit",
-                    alignSelf: isViewMode ? "center" : "inherit",
-                    justifySelf: isViewMode ? "center" : "inherit",
-                    overflowY: isViewMode ? "auto" : "inherit",
-                    // display: isViewMode ? "block" : "inherit",
-                    padding: isViewMode ? "30px" : "unset",
-                    transform: isViewMode ? "translateY(-50%)" : 'inherit',
-                }}
-                fallback={<p>...</p>}
+                activeLayout={globalState.activeLayout}
+                isViewMode={isViewMode}
                 color={color}
                 onMouseEnter={() => setIsActive(() => true)}
                 onMouseLeave={() => setIsActive(() => false)}
@@ -49,7 +40,11 @@ export const Card = ({
                     {heading && <h3>{heading}</h3>}
                     <p>{children}</p>
                 </CardBody>
-                <CardFooter data={data} isActive={isActive}>
+                <CardFooter
+                    data={data}
+                    isActive={isActive}
+                    isViewMode={isViewMode}
+                >
                     <IconButton onClick={() => setIsViewMode(!isViewMode)}>
                         <Expand width={15} height={15} />
                     </IconButton>

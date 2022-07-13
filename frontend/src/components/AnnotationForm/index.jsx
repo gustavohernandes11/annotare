@@ -15,7 +15,7 @@ const initialFormData = {
     heading: null,
     content: null,
     category: null,
-    created_at: "now",
+    created_at: null,
 };
 
 export const AnnotationForm = () => {
@@ -40,9 +40,19 @@ export const AnnotationForm = () => {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!formData.category) {
-            toast.warn("Escolha uma categoria");
+        if (!formData.content) {
+            toast.warn("Preencha o campo da mensagem.", {
+                toastId: "warn-no-content-toast",
+            });
             toast.clearWaitingQueue();
+            return;
+        }
+        if (!formData.category) {
+            toast.warn("Escolha uma categoria.", {
+                toastId: "warn-no-category-toast",
+            });
+            toast.clearWaitingQueue();
+            return;
         } else {
             if (formData.id === null) {
                 dataActions.addNewAnnotation({
@@ -54,9 +64,15 @@ export const AnnotationForm = () => {
                 toast.success("Anotado!", { toastId: "success-anoted-toast" });
                 toast.clearWaitingQueue();
             } else {
+                setFormData({ ...formData, created_at: Date.now().toLocaleString() });
+
                 dataActions.removeAnnotation(formData);
-                dataActions.addNewAnnotation({ ...formData });
-                console.log(formData);
+                dataActions.addNewAnnotation({
+                    ...formData,
+                });
+                console.log({
+                    formData,
+                });
                 globalActions.setEditMode(false);
             }
         }
