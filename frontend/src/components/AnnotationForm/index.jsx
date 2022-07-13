@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import * as Styled from "./styles.js";
 import { Input } from "../Input";
-// import P from 'prop-types'
 import { Button } from "../Button";
+// import P from 'prop-types'
 // import { CheckBox } from '../CheckBox'
 import { useDataContext } from "../../hooks/useDataContext.jsx";
 import { useGlobalContext } from "../../hooks/useGlobalContext.jsx";
@@ -31,7 +31,6 @@ export const AnnotationForm = () => {
         if (globalState.selectedAnnotation) {
             setFormData(globalState.selectedAnnotation);
         }
-        console.log(formData);
     }, []);
 
     const handleCancel = () => {
@@ -55,24 +54,23 @@ export const AnnotationForm = () => {
             return;
         } else {
             if (formData.id === null) {
+                const now = new Date().toLocaleDateString();
                 dataActions.addNewAnnotation({
                     ...formData,
                     id: +(Math.random() * 100000000).toFixed(),
+                    created_at: now,
                 });
-                console.log(formData);
                 globalActions.setEditMode(false);
                 toast.success("Anotado!", { toastId: "success-anoted-toast" });
                 toast.clearWaitingQueue();
             } else {
-                setFormData({ ...formData, created_at: Date.now().toLocaleString() });
+                setFormData({ ...formData });
 
                 dataActions.removeAnnotation(formData);
                 dataActions.addNewAnnotation({
                     ...formData,
                 });
-                console.log({
-                    formData,
-                });
+
                 globalActions.setEditMode(false);
             }
         }
