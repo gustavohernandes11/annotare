@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.header`
+export const Container = styled.footer`
     ${({ theme }) => css`
         display: flex;
         align-items: center;
@@ -8,12 +8,7 @@ export const Container = styled.header`
         flex-direction: row;
         height: ${theme.spacings.xlarge};
         padding: ${theme.spacings.small} ${theme.spacings.medium};
-        border-bottom: 1px solid ${theme.colors.border};
         transition: all ease-in-out 0.2s;
-
-        svg {
-            color: "red";
-        }
 
         > span {
             display: flex;

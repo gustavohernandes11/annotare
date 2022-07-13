@@ -26,13 +26,15 @@ export const Card = ({
                 style={{
                     position: isViewMode ? "absolute" : "inherit",
                     zIndex: isViewMode ? "99" : "inherit",
-                    top: isViewMode ? "15%" : "inherit",
-                    WebkitLineClamp: isViewMode ? "none" : "inherit",
+                    top: isViewMode ? "50%" : "inherit",
                     width: isViewMode ? "60%" : "inherit",
-                    height: isViewMode ? "60%" : "inherit",
+                    height: isViewMode ? "80%" : "inherit",
                     alignSelf: isViewMode ? "center" : "inherit",
                     justifySelf: isViewMode ? "center" : "inherit",
                     overflowY: isViewMode ? "auto" : "inherit",
+                    // display: isViewMode ? "block" : "inherit",
+                    padding: isViewMode ? "30px" : "unset",
+                    transform: isViewMode ? "translateY(-50%)" : 'inherit',
                 }}
                 fallback={<p>...</p>}
                 color={color}
@@ -43,7 +45,7 @@ export const Card = ({
                     <span>{category}</span>
                     <span>{createdAt}</span>
                 </CardHeader>
-                <CardBody>
+                <CardBody isViewMode={isViewMode}>
                     {heading && <h3>{heading}</h3>}
                     <p>{children}</p>
                 </CardBody>

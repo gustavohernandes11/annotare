@@ -71,6 +71,7 @@ export const AnnotationForm = () => {
                     defaultValue={globalState.selectedAnnotation?.heading || ""}
                     maxLength="100"
                     placeholder="..."
+                    autoFocus
                     onChange={(e) =>
                         setFormData({ ...formData, heading: e.target.value })
                     }
@@ -117,7 +118,7 @@ export const AnnotationForm = () => {
             <span>
                 <Input
                     height="200px"
-                    maxLength="500"
+                    maxLength="999"
                     name="note-content"
                     as="textarea"
                     placeholder="..."

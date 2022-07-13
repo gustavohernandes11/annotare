@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.footer`
+export const Container = styled.header`
     ${({ theme }) => css`
         display: flex;
         justify-content: space-between;

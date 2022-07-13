@@ -2,6 +2,7 @@ import * as Styled from "./styles.js";
 import P from "prop-types";
 
 export const Input = ({
+    autoFocus,
     defaultValue,
     maxLength,
     minLength = "3",
@@ -20,6 +21,7 @@ export const Input = ({
 }) => {
     return (
         <Styled.Input
+            autoFocus={autoFocus}
             defaultValue={defaultValue}
             maxLength={maxLength}
             minLength={minLength}

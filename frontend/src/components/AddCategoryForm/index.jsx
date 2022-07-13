@@ -34,6 +34,7 @@ export const AddCategoryForm = () => {
     return (
         <Styled.Container>
             <Input
+                autoFocus
                 type="text"
                 name="input-category-name"
                 maxLength="20"
