@@ -13,5 +13,10 @@ export const Container = styled.main`
         h3 {
             margin-bottom: ${theme.spacings.medium};
         }
+
+        @media screen and (max-width: ${theme.screens.mobileL}) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
+        }
     `}
 `;

@@ -29,5 +29,30 @@ export const Header = styled.header`
                 fill: ${theme.colors.danger};
             }
         }
+        @media screen and (max-width: ${theme.screens.laptop}) {
+            h1,
+            h2 {
+                font-size: 1.4rem;
+            }
+            .search-and-button-span {
+                gap: 0;
+            }
+
+            #add-annotations-button,
+            .delete-category-icon {
+                display: none;
+            }
+            #float-add-annotation-button {
+                display: flex;
+            }
+        }
+        @media screen and (max-width: ${theme.screens.mobileL}) {
+            justify-content: unset;
+            flex-direction: column;
+            gap: ${theme.spacings.small};
+            align-items: baseline;
+
+        
+        }
     `}
 `;

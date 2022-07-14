@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.button`
-    ${({ theme, size = "40px" }) => css`
+    ${({ theme, size = "40px", marginBottom = "5px" }) => css`
 
     
     display: flex;
@@ -17,6 +17,7 @@ export const Container = styled.button`
     padding: 5px;
     max-width: ${size};
     max-height: ${size};
+    margin-bottom: ${marginBottom};
 
     :hover {
         cursor: pointer;

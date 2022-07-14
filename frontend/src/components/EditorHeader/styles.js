@@ -12,5 +12,17 @@ export const Header = styled.header`
             display: flex;
             flex-direction: row;
         }
+        @media screen and (max-width: ${theme.screens.laptop}) {
+            h1,
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+        }
+        @media screen and (max-width: ${theme.screens.mobileL}) {
+            justify-content: space-between;
+            gap: ${theme.spacings.small};
+            align-items: center;
+        }
     `}
 `;

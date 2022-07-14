@@ -5,36 +5,53 @@ import { Category } from "../../components/Category";
 import { DataContext } from "../../contexts/dataContext/DataContextProvider.jsx";
 import { AddCategoryForm } from "../../components/AddCategoryForm/index.jsx";
 import { useGlobalContext } from "../../hooks/useGlobalContext.jsx";
+import { ClickAway } from "./../../components/Popover/styles";
 
 export const AsideMenu = () => {
     const [dataState] = useContext(DataContext);
     const [globalState, globalActions] = useGlobalContext();
 
-    return (
-        <Styled.Container>
-            <AsideMenuHeader />
-            {globalState.addCategoryMode && <AddCategoryForm />}
+    const handleClickCategory = (name) => {
+        globalActions.setSelectedCategory(name);
 
-            <Category
-                default
-                selected={globalState.selectedCategory === null}
-                color="grey"
-                onClick={() => globalActions.setSelectedCategory(null)}
-            >
-                All
-            </Category>
-            {dataState.categories?.map((category) => (
+        if (window.screen.width < 768) {
+            globalActions.setIsAsideMenuOpen(false);
+        }
+    };
+
+    return (
+        <>
+            {globalState.isAsideMenuOpen && window.screen.width < 768 ? (
+                <ClickAway
+                    onClick={() => globalActions.setIsAsideMenuOpen(false)}
+                />
+            ) : null}
+
+            <Styled.Container id="asidemenu">
+                <AsideMenuHeader />
+                {globalState.addCategoryMode && <AddCategoryForm />}
+
                 <Category
-                    onClick={() =>
-                        globalActions.setSelectedCategory(category.name)
-                    }
-                    selected={globalState.selectedCategory === category.name}
-                    key={category.name}
-                    color={category.color}
+                    default
+                    selected={globalState.selectedCategory === null}
+                    color="grey"
+                    onClick={() => globalActions.handleClickCategory(null)}
                 >
-                    {category.name}
+                    All
                 </Category>
-            ))}
-        </Styled.Container>
+                {dataState.categories?.map((category) => (
+                    <Category
+                        onClick={() => handleClickCategory(category.name)}
+                        selected={
+                            globalState.selectedCategory === category.name
+                        }
+                        key={category.name}
+                        color={category.color}
+                    >
+                        {category.name}
+                    </Category>
+                ))}
+            </Styled.Container>
+        </>
     );
 };

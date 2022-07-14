@@ -1,6 +1,7 @@
 import { IconButton } from "../../components/IconButton/index.jsx";
-import { ListAlt, Moon, Lightbulb } from "@styled-icons/fa-regular";
-import { Th, ThList, Rainbow } from "@styled-icons/fa-solid";
+import { Moon, Lightbulb } from "@styled-icons/fa-regular";
+
+import { Th, ThList, Rainbow, Stream } from "@styled-icons/fa-solid";
 import {} from "@styled-icons/fa-brands";
 import * as Styled from "./styles.js";
 import { GlobalContext } from "../../contexts/globalContext/GlobalContextProvider";
@@ -10,15 +11,27 @@ export const AsideBar = () => {
     const [globalState, globalActions] = useContext(GlobalContext);
 
     return (
-        <Styled.Container>
+        <Styled.Container id="asidebar">
             <span>
-                <IconButton onClick={() => {}}>
-                    <ListAlt title="Annotare" />
-                </IconButton>
+                <h1>.N</h1>
                 <hr />
+
+                <IconButton
+                    id="toggle-menu-asibe-bar-button"
+                    onClick={() =>
+                        globalActions.setIsAsideMenuOpen(
+                            globalState.isAsideMenuOpen ? false : true
+                        )
+                    }
+                >
+                    <Stream title="Open Menu" />
+                </IconButton>
             </span>
             <span>
-                <IconButton onClick={() => globalActions.changeLayout()}>
+                <IconButton
+                    id="toggle-layout-asibe-bar-button"
+                    onClick={() => globalActions.changeLayout()}
+                >
                     {globalState.activeLayout === "grid" ? (
                         <ThList title="Change Layout" />
                     ) : (

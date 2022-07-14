@@ -96,7 +96,6 @@ export const AnnotationForm = () => {
                     onChange={(e) =>
                         setFormData({ ...formData, category: e.target.value })
                     }
-                    className="margin-right"
                 >
                     <option
                         value=""

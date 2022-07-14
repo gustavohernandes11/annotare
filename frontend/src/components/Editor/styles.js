@@ -6,5 +6,12 @@ export const Container = styled.div`
         padding-inline: ${theme.spacings.xlarge};
         overflow-y: auto;
         height: 100vh;
+
+        @media screen and (max-width: ${theme.screens.laptop}) {
+            padding: ${theme.spacings.medium};
+        }
+        @media screen and (max-width: ${theme.screens.mobileL}) {
+            padding: ${theme.spacings.small};
+        }
     `}
 `;

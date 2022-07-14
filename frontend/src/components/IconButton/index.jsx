@@ -2,6 +2,7 @@ import * as Styled from "./styles.js";
 import P from "prop-types";
 
 export const IconButton = ({
+    marginBottom,
     children,
     onClick,
     as,
@@ -10,10 +11,13 @@ export const IconButton = ({
     size,
     type,
     disabled,
+    id,
     className,
 }) => {
     return (
         <Styled.Container
+        id={id}
+        marginBottom={marginBottom}
             className={className}
             disabled={disabled}
             type={type}

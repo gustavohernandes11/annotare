@@ -23,6 +23,7 @@ export const Container = styled.nav`
             border: ${theme.name === "rainbow" || "light"
                 ? `1px solid ${theme.colors.border}`
                 : "none"};
+            background: ${theme.name === "rainbow" ? `transparent` : "inherit"};
         }
 
         > span {
@@ -35,6 +36,22 @@ export const Container = styled.nav`
         hr {
             border-color: ${theme.colors.border};
             width: 80%;
+        }
+
+        @media screen and (max-width: ${theme.screens.laptop}) {
+            padding-top: ${theme.spacings.small};
+            z-index: 100;
+
+            button {
+                border: none;
+                background: transparent;
+            }
+        }
+        @media screen and (max-width: ${theme.screens.mobileL}) {
+            #toggle-layout-asibe-bar-button {
+                display: none;
+            }
+            border: 1px solid ${theme.colors.border};
         }
     `}
 `;

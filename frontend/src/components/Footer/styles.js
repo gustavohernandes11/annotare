@@ -22,5 +22,10 @@ export const Container = styled.footer`
             flex-direction: row;
             align-items: center;
         }
+        @media screen and (max-width: ${theme.screens.laptop}) {
+            flex-direction: column;
+            gap: ${theme.spacings.medium};
+            padding: ${theme.spacings.medium};
+        }
     `}
 `;

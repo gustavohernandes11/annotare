@@ -10,6 +10,7 @@ export const DataContext = createContext();
 export const DataContextProvider = ({ children }) => {
     let storagedData = JSON.parse(localStorage.getItem("storagedData"));
     const [state, dispatch] = useReducer(reducer, storagedData || initialData);
+    
 
     const actions = buildActions(dispatch);
 

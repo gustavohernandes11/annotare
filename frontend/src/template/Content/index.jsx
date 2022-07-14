@@ -5,7 +5,7 @@ import { Footer } from "../../components/Footer";
 
 export const Content = () => {
     return (
-        <Styled.Container>
+        <Styled.Container id="content">
             <ContentHeader />
             <ContentBoard />
             <Footer />

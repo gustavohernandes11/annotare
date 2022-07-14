@@ -1,9 +1,9 @@
 import { useContext, useState, useEffect } from "react";
 import { GlobalContext } from "../contexts/globalContext/GlobalContextProvider";
 import { ThemeProvider } from "styled-components";
-import { darkTheme as dark } from "./themes";
-import { lightTheme as light } from "./themes";
-import { rainbowTheme as rainbow } from "./themes";
+import { darkTheme as dark } from "./darkTheme";
+import { lightTheme as light } from "./lightTheme";
+import { rainbowTheme as rainbow } from "./rainbowTheme";
 import { LoadingPage } from "../components/LoadingPage";
 
 export const Theme = ({ children }) => {

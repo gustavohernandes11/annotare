@@ -12,10 +12,6 @@ export const Form = styled.form`
             padding: ${theme.spacings.small};
         }
 
-        .margin-right {
-            margin-right: ${theme.spacings.large};
-        }
-
         > span {
             margin-bottom: ${theme.spacings.small};
             display: flex;
@@ -24,7 +20,7 @@ export const Form = styled.form`
             row-gap: ${theme.spacings.large};
 
             > select {
-                min-width: 260px;
+                min-width: 100%;
                 color: ${theme.colors.primary};
                 border: 1px solid ${theme.colors.border};
                 border-radius: ${theme.spacings.xsmall};
@@ -35,5 +31,7 @@ export const Form = styled.form`
                 padding: ${theme.spacings.small};
             }
         }
+        
+        
     `}
 `;

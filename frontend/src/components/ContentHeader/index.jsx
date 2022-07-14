@@ -4,13 +4,14 @@ import { Popover } from "../Popover";
 import { Heading } from "../Heading/index.jsx";
 import { LargeButton } from "../LargeButton/index.jsx";
 import { SearchInput } from "../SearchInput/index.jsx";
-import { TrashAlt } from "@styled-icons/fa-solid";
+import { TrashAlt, Plus } from "@styled-icons/fa-solid";
 import { IconButton } from "../IconButton";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 import { useDataContext } from "../../hooks/useDataContext";
 import { toast } from "react-toastify";
 
 import P from "prop-types";
+import { FloatButton } from "./../FloatButton/index";
 
 export const ContentHeader = () => {
     const [globalState, globalActions] = useGlobalContext();
@@ -18,7 +19,7 @@ export const ContentHeader = () => {
     const [dataState, dataActions] = useDataContext();
     const [isPopoverActive, setIsPopoverActive] = useState();
 
-    const handleClick = () => {
+    const handleAddNote = () => {
         globalActions.setEditMode(true);
         globalActions.setSelectedAnnotation(null);
     };
@@ -35,6 +36,12 @@ export const ContentHeader = () => {
 
     return (
         <Styled.Header>
+            <FloatButton
+                onClick={handleAddNote}
+                id="float-add-annotation-button"
+            >
+                <Plus width={20} height={20} />
+            </FloatButton>
             {isPopoverActive && (
                 <Popover
                     mensage={`Você tem certeza que deseja excluir a
@@ -58,7 +65,12 @@ export const ContentHeader = () => {
                         globalActions.setSearchInputValue(e.target.value)
                     }
                 />
-                <LargeButton primary="true" onClick={handleClick}>
+
+                <LargeButton
+                    id="add-annotations-button"
+                    primary="true"
+                    onClick={handleAddNote}
+                >
                     Adicionar
                 </LargeButton>
                 {globalState.selectedCategory !== null && (

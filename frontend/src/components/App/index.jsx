@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./styles.js";
 import * as Styled from "./styles.js";
@@ -12,6 +12,7 @@ import { DataContextProvider } from "../../contexts/dataContext/DataContextProvi
 import { Editor } from "../Editor/index.jsx";
 function App() {
     const [globalState] = useGlobalContext();
+
     return (
         <Theme>
             <Hidden />
@@ -19,7 +20,8 @@ function App() {
                 <Styled.Container>
                     <AsideBar />
                     <DataContextProvider>
-                        <AsideMenu />
+                        {(globalState.isAsideMenuOpen ||
+                            window.screen.width > 768) && <AsideMenu />}
                         <span>
                             {globalState.editMode ? <Editor /> : <Content />}
                         </span>

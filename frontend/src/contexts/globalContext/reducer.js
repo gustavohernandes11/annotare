@@ -1,7 +1,11 @@
 export const reducer = (state, action) => {
     switch (action.type) {
+        case "SET_IS_ASIDE_MENU_OPEN":
+            console.log(state.isAsideMenuOpen);
+            return { ...state, isAsideMenuOpen: action.payload };
         case "SET_SEARCH_INPUT_VALUE":
             return { ...state, searchInputValue: action.payload };
+
         case "SET_SELECTED_CARD":
             return { ...state, selectedCard: action.payload };
 

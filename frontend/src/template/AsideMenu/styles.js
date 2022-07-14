@@ -11,7 +11,16 @@ export const Container = styled.aside`
         color: ${theme.colors.primary};
         overflow-y: auto;
         height: 100vh;
+        max-width: 250px;
 
         box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.1);
+
+        @media screen and (max-width: ${theme.screens.laptop}) {
+            padding-top: ${theme.spacings.small};
+        padding-inline: ${theme.spacings.medium};
+        z-index: 100;
+
+        }
+       
     `}
 `;

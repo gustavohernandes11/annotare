@@ -24,5 +24,8 @@ export const buildActions = (dispatch) => {
         setSelectedAnnotation: (payload) => {
             dispatch({ type: "SET_SELECTED_ANNOTATION", payload });
         },
+        setIsAsideMenuOpen: (payload) => {
+            dispatch({ type: "SET_IS_ASIDE_MENU_OPEN", payload })
+        }
     };
 };
