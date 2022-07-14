@@ -1,4 +1,5 @@
 import * as Styled from "./styles.js";
+import P from 'prop-types'
 
 export const IconButton = ({
     children,
@@ -26,3 +27,18 @@ export const IconButton = ({
         </Styled.Container>
     );
 };
+
+IconButton.propTypes = {
+    children: P.node.isRequired,
+    onClick: P.func,
+    as: P.oneOf(['button', 'a']),
+    href: P.string,
+    target: P.string,
+    size: P.oneOfType([P.string, P.number]),
+    type: P.string,
+    disabled: P.bool,
+    className: P.string,
+}
+
+
+

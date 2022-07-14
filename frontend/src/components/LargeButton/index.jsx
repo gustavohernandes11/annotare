@@ -18,4 +18,6 @@ export const LargeButton = ({ primary, children, onClick }) => {
 
 LargeButton.propTypes = {
     children: P.oneOfType([P.string, P.object, P.node]).isRequired,
+    primary: P.oneOfType([P.string, P.number, P.bool]),
+    onClick: P.func.isRequired,
 };

@@ -2,7 +2,6 @@ import * as Styled from "./styles.js";
 import { Heading } from "../Heading/index.jsx";
 import { LargeButton } from "../LargeButton";
 import { useGlobalContext } from "../../hooks/useGlobalContext.jsx";
-import P from "prop-types";
 
 export const EditorHeader = () => {
     const [state, actions] = useGlobalContext();
@@ -27,6 +26,3 @@ export const EditorHeader = () => {
     );
 };
 
-EditorHeader.propTypes = {
-    children: P.node,
-};

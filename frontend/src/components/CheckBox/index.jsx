@@ -23,4 +23,7 @@ CheckBox.propTypes = {
     onClick: P.func.isRequired,
     label: P.oneOfType([P.string, P.number]).isRequired,
     name: P.string,
+    onChange: P.func,
+    width: P.oneOfType([P.string, P.number]),
+    value: P.oneOfType([P.string, P.number]),
 };

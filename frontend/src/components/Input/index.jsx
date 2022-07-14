@@ -48,4 +48,18 @@ export const Input = ({
 Input.propTypes = {
     placeholder: P.string,
     width: P.oneOfType([P.string, P.number]),
+    autoFocus: P.bool,
+    defaultValue: P.oneOfType([P.string, P.number]),
+    maxLength: P.oneOfType([P.string, P.number]),
+    minLength: P.oneOfType([P.string, P.number]),
+    value: P.oneOfType([P.string, P.number]),
+    id: P.oneOfType([P.string, P.number]),
+    onChange: P.func,
+    onClick: P.func,
+    type: P.string,
+    height: P.oneOfType([P.string, P.number]),
+    marginBottom: P.oneOfType([P.string, P.number]),
+    padding: P.oneOfType([P.string, P.number]),
+    name: P.string,
+    as: P.string,
 };

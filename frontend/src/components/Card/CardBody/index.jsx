@@ -1,9 +1,9 @@
 import * as Styled from "./styles.js";
 import P from "prop-types";
 
-export const CardBody = ({ children, onClick, isViewMode }) => {
+export const CardBody = ({ children,  isViewMode }) => {
     return (
-        <Styled.Container isViewMode={isViewMode} onClick={onClick}>
+        <Styled.Container isViewMode={isViewMode} >
             {children}
         </Styled.Container>
     );
@@ -11,4 +11,6 @@ export const CardBody = ({ children, onClick, isViewMode }) => {
 
 CardBody.propTypes = {
     children: P.node.isRequired,
+    isViewMode: P.bool.isRequired,
+
 };

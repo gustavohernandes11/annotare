@@ -12,8 +12,8 @@ export const AsideBar = () => {
     return (
         <Styled.Container>
             <span>
-                <IconButton>
-                    <ListAlt title="Favorites" />
+                <IconButton onClick={() => {}}>
+                    <ListAlt title="Annotare" />
                 </IconButton>
                 <hr />
             </span>

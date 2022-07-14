@@ -2,7 +2,8 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
     ${({ theme }) => css`
-        display: block;
+        display: inline-flex;
+        flex-direction: column;
         padding-top: ${theme.spacings.medium};
         padding-inline: ${theme.spacings.xlarge};
         background: ${theme.name === "light"

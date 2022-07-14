@@ -57,5 +57,8 @@ export const Card = ({
 Card.propTypes = {
     children: P.node.isRequired,
     color: P.string,
-    heading: P.string,
+    heading: P.oneOfType([P.string, P.number]),
+    category: P.oneOfType([P.string, P.number]),
+    createdAt: P.string,
+    data: P.object.isRequired,
 };

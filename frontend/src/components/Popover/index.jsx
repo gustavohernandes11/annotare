@@ -32,6 +32,6 @@ export const Popover = ({
 Popover.propTypes = {
     heading: P.string,
     mensage: P.string.isRequired,
-    cancelFunction: P.func,
-    acceptFunction: P.func,
+    cancelFunction: P.func.isRequired,
+    acceptFunction: P.func.isRequired,
 };

@@ -16,4 +16,7 @@ export const Category = ({ children, color, onClick, selected }) => {
 
 Category.propTypes = {
     children: P.node.isRequired,
+    color: P.string,
+    onClick: P.func.isRequired,
+    selected: P.bool,
 };

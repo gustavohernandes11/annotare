@@ -5,7 +5,6 @@ import * as Styled from "./styles.js";
 import { Input } from "../Input";
 import { Button } from "../Button";
 // import P from 'prop-types'
-// import { CheckBox } from '../CheckBox'
 import { useDataContext } from "../../hooks/useDataContext.jsx";
 import { useGlobalContext } from "../../hooks/useGlobalContext.jsx";
 import { toast } from "react-toastify";
@@ -93,7 +92,7 @@ export const AnnotationForm = () => {
             </span>
             <span>
                 <select
-                    name="nonte-category"
+                    name="note-category"
                     onChange={(e) =>
                         setFormData({ ...formData, category: e.target.value })
                     }
@@ -120,13 +119,6 @@ export const AnnotationForm = () => {
                         </option>
                     ))}
                 </select>
-                {/* <CheckBox
-                    label="Favorito"
-                    name="Favorite"
-                    value={true}
-                    
-                    onChange={(e) => setFormData({ ...formData, favorite: e.target.value })}
-                    width={`fit-content`} /> */}
             </span>
             <label htmlFor="note-content">Mensagem</label>
             <span>

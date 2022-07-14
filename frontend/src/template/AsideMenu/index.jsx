@@ -29,7 +29,7 @@ export const AsideMenu = () => {
                         globalActions.setSelectedCategory(category.name)
                     }
                     selected={globalState.selectedCategory === category.name}
-                    key={category.id}
+                    key={category.name}
                     color={category.color}
                 >
                     {category.name}
