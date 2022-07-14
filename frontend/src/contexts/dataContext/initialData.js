@@ -1,4 +1,4 @@
-export const mockData = {
+export const initialData = {
     categories: [
         {
             id: 1,
@@ -22,6 +22,6 @@ export const mockData = {
             content: `Você pode começar clicando em 'Adicionar'. `,
             category: "Notas do desenvolvedor",
             created_at: "",
-        }
+        },
     ],
 };

@@ -4,6 +4,7 @@ export const Container = styled.div`
     ${({ theme }) => css`
         display: inline-flex;
         flex-direction: column;
+        width: 100%;
         padding-top: ${theme.spacings.medium};
         padding-inline: ${theme.spacings.xlarge};
         background: ${theme.name === "light"

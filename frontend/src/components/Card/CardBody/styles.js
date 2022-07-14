@@ -13,9 +13,9 @@ export const Container = styled.main`
             max-height: max-content;
             max-width: max-content;
             -webkit-line-clamp: ${isViewMode === true ? "unset" : 7};
-            margin-bottom: ${isViewMode === true
-                ? theme.spacings.small
-                : "inherit"};
+            margin-bottom: ${
+                isViewMode === true ? theme.spacings.small : "inherit"
+            };
 
             overflow: hidden;
             text-overflow: ellipsis;

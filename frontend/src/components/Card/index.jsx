@@ -7,7 +7,7 @@ import { CardBody } from "./CardBody";
 import { CardHeader } from "./CardHeader";
 import { Expand } from "@styled-icons/fa-solid";
 import { IconButton } from "./../IconButton/index";
-import { useGlobalContext } from '../../hooks/useGlobalContext'
+import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 export const Card = ({
     heading,
@@ -20,7 +20,6 @@ export const Card = ({
     const [isActive, setIsActive] = useState(false);
     const [isViewMode, setIsViewMode] = useState(false);
     const [globalState] = useGlobalContext();
-
 
     return (
         <>
