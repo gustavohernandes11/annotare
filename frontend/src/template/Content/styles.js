@@ -6,6 +6,7 @@ export const Container = styled.div`
         flex-direction: column;
         width: 100%;
         padding-top: ${theme.spacings.medium};
+        padding-bottom: ${theme.spacings.medium};
         padding-inline: ${theme.spacings.xlarge};
         background: ${theme.name === "light"
             ? "#e3e3e3"
@@ -15,11 +16,10 @@ export const Container = styled.div`
         height: 100vh;
 
         @media screen and (max-width: ${theme.screens.laptop}) {
-            padding: ${theme.spacings.medium};
+            padding-inline: ${theme.spacings.medium};
         }
         @media screen and (max-width: ${theme.screens.mobileL}) {
-            padding: ${theme.spacings.small};
-
+            height: calc(100vh - 40px);
         }
     `}
 `;

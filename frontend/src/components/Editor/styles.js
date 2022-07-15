@@ -12,6 +12,8 @@ export const Container = styled.div`
         }
         @media screen and (max-width: ${theme.screens.mobileL}) {
             padding: ${theme.spacings.small};
+            height: calc(100vh - 40px);
+
         }
     `}
 `;

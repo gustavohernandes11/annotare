@@ -4,7 +4,7 @@ import { AnnotationForm } from "../AnnotationForm";
 
 export const Editor = () => {
     return (
-        <Styled.Container>
+        <Styled.Container id="editor">
             <EditorHeader />
             <AnnotationForm />
         </Styled.Container>

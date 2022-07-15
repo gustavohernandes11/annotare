@@ -35,7 +35,7 @@ export const AsideMenu = () => {
                     default
                     selected={globalState.selectedCategory === null}
                     color="grey"
-                    onClick={() => globalActions.handleClickCategory(null)}
+                    onClick={() => handleClickCategory(null)}
                 >
                     All
                 </Category>

@@ -3,7 +3,7 @@ export const defaultState = {
     isAsideMenuOpen: false,
     editMode: null,
     activeTheme: "dark",
-    activeLayout: "grid",
+    activeLayout: "list",
     selectedCard: null,
     selectedCategory: null,
     searchInputValue: "",

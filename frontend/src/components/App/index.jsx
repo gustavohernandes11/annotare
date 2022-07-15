@@ -9,9 +9,19 @@ import { AsideMenu } from "../../template/AsideMenu";
 import { Content } from "../../template/Content";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 import { DataContextProvider } from "../../contexts/dataContext/DataContextProvider";
+import { lightTheme } from "../../themes/lightTheme.js";
 import { Editor } from "../Editor/index.jsx";
+
 function App() {
-    const [globalState] = useGlobalContext();
+    const [globalState, globalActions] = useGlobalContext();
+    // to aprumar
+    useEffect(() => {
+        if (window.screen.width > lightTheme.screens.laptop) {
+            globalActions.setIsAsideMenuOpen(false);
+        } else {
+            globalActions.changeLayout("list");
+        }
+    }, []);
 
     return (
         <Theme>

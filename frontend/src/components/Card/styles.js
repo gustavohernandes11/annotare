@@ -31,5 +31,13 @@ export const Container = styled.div`
         overflow-y: ${isViewMode ? "auto" : "inherit"};
         padding: ${isViewMode ? theme.spacings.medium : "none"};
         transform: ${isViewMode ? "translateY(-50%)" : "inherit"};
+
+        @media screen and (max-width: ${theme.screens.mobileL}) {
+        width: ${isViewMode ? "80%" : "inherit"};
+        height: ${isViewMode ? "90%" : "inherit"};
+        transform: ${isViewMode ? "translateY(calc(-50% + 20px))" : "inherit"};
+            
+
+        }
     `}
 `;
