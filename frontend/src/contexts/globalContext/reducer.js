@@ -1,7 +1,6 @@
 export const reducer = (state, action) => {
     switch (action.type) {
         case "SET_IS_ASIDE_MENU_OPEN":
-            console.log(state.isAsideMenuOpen);
             return { ...state, isAsideMenuOpen: action.payload };
         case "SET_SEARCH_INPUT_VALUE":
             return { ...state, searchInputValue: action.payload };
@@ -22,7 +21,12 @@ export const reducer = (state, action) => {
             return { ...state, editMode: action.payload };
 
         case "SET_THEME":
+            console.log("set layout");
+
             return { ...state, activeTheme: action.payload };
+
+        case "SET_LAYOUT":
+            return { ...state, activeLayout: action.payload };
 
         case "CHANGE_THEME":
             let newTheme = state.activeTheme;
@@ -36,17 +40,18 @@ export const reducer = (state, action) => {
                 localStorage.setItem("storagedTheme", "light");
                 newTheme = "light";
             }
-            console.log(newTheme);
             return { ...state, activeTheme: newTheme };
 
         case "CHANGE_LAYOUT":
             let newLayout = state.activeLayout;
-            if (state.activeLayout === "grid") {
-                newLayout = "list";
-            } else if (state.activeLayout === "list") {
+            if (state.activeLayout === "list" | null) {
+                localStorage.setItem("storagedLayout", "grid");
                 newLayout = "grid";
+            } else if (state.activeLayout === "grid") {
+                localStorage.setItem("storagedLayout", "list");
+                newLayout = "list";
             }
-            console.log(newLayout);
+            console.log("change layout"+ newLayout);
             return { ...state, activeLayout: newLayout };
 
         default:

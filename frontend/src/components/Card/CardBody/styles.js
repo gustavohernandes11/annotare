@@ -8,6 +8,7 @@ export const Container = styled.main`
         > p,
         h3 {
             display: -webkit-box;
+            font-size: ${theme.sizes.small}
             text-align: justify;
             -webkit-box-orient: vertical;
             max-height: max-content;
@@ -23,6 +24,7 @@ export const Container = styled.main`
         }
 
         > h3 {
+            font-size: ${theme.sizes.medium}
             -webkit-line-clamp: ${isViewMode === true ? "unset" : 7};
             margin-bottom: ${theme.spacings.small};
     `}

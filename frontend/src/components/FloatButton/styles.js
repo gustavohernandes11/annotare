@@ -10,7 +10,7 @@ export const Button = styled(Container)`
         width: 50px;
         height: 50px;
         border-radius: 10px;
-        bottom: 10px;
+        bottom: 20px;
         right: 20px;
         background: ${theme.colors.secondary};
         display: none;

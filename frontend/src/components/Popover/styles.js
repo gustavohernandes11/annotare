@@ -29,6 +29,11 @@ export const Container = styled.div`
             display: flex;
             gap: ${theme.spacings.xsmall};
         }
+
+        @media screen and (max-width: ${theme.screens.laptop}) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
     `}
 `;
 

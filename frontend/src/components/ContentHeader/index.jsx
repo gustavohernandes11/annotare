@@ -52,6 +52,7 @@ export const ContentHeader = () => {
             )}
             <span>
                 <Heading>{globalState.selectedCategory || "Todas"}</Heading>
+
                 <p>
                     {globalState.searchInputValue
                         ? `Buscando por "${globalState.searchInputValue}"`
@@ -59,6 +60,16 @@ export const ContentHeader = () => {
                 </p>
             </span>
             <span className="search-and-button-span">
+                <span>
+                    {globalState.selectedCategory !== null && (
+                        <IconButton
+                            onClick={() => setIsPopoverActive(true)}
+                            className="delete-category-icon"
+                        >
+                            <TrashAlt width={20} height={20} />
+                        </IconButton>
+                    )}
+                </span>
                 <SearchInput
                     id="search-input"
                     onChange={(e) =>
@@ -73,14 +84,6 @@ export const ContentHeader = () => {
                 >
                     Adicionar
                 </LargeButton>
-                {globalState.selectedCategory !== null && (
-                    <IconButton
-                        onClick={() => setIsPopoverActive(true)}
-                        className="delete-category-icon"
-                    >
-                        <TrashAlt width={20} height={20} />
-                    </IconButton>
-                )}
             </span>
         </Styled.Header>
     );

@@ -9,6 +9,9 @@ export const buildActions = (dispatch) => {
         setTheme: (payload) => {
             dispatch({ type: "SET_THEME", payload });
         },
+        setLayout: (payload) => {
+            dispatch({ type: "SET_LAYOUT", payload });
+        },
         setEditMode: (payload) => {
             dispatch({ type: "SET_EDIT_MODE", payload });
         },
@@ -25,7 +28,7 @@ export const buildActions = (dispatch) => {
             dispatch({ type: "SET_SELECTED_ANNOTATION", payload });
         },
         setIsAsideMenuOpen: (payload) => {
-            dispatch({ type: "SET_IS_ASIDE_MENU_OPEN", payload })
-        }
+            dispatch({ type: "SET_IS_ASIDE_MENU_OPEN", payload });
+        },
     };
 };

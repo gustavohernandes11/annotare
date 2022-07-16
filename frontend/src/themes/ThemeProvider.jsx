@@ -6,13 +6,22 @@ import { lightTheme as light } from "./lightTheme";
 import { rainbowTheme as rainbow } from "./rainbowTheme";
 import { LoadingPage } from "../components/LoadingPage";
 
-export const Theme = ({ children }) => {
+export function Theme({ children }) {
     const [globalState, globalActions] = useContext(GlobalContext);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(() => true);
         const storagedTheme = localStorage.getItem("storagedTheme");
+        const storagedLayout = localStorage.getItem("storagedLayout");
+
+        if (storagedLayout === null || undefined) {
+            localStorage.setItem("storagedLayout", "list");
+            globalActions.setLayout("list");
+        } else {
+            globalActions.setLayout(storagedLayout);
+        }
+
         if (storagedTheme === null || undefined) {
             localStorage.setItem("storagedTheme", "dark");
             globalActions.setTheme("dark");
@@ -42,4 +51,4 @@ export const Theme = ({ children }) => {
             {loading ? <LoadingPage /> : children}
         </ThemeProvider>
     );
-};
+}

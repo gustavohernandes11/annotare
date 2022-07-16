@@ -17,7 +17,7 @@ function App() {
     // to aprumar
     useEffect(() => {
         if (window.screen.width > lightTheme.screens.laptop) {
-            globalActions.setIsAsideMenuOpen(false);
+            globalActions.setIsAsideMenuOpen(true);
         } else {
             globalActions.changeLayout("list");
         }

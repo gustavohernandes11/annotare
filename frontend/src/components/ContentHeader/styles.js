@@ -18,6 +18,7 @@ export const Header = styled.header`
             border: none;
             background-color: ${theme.colors.backgroundPrimary};
             margin-bottom: 0;
+            margin-right: ${theme.spacings.medium};
             path {
                 fill: ${theme.colors.grey};
             }
@@ -38,8 +39,7 @@ export const Header = styled.header`
                 gap: 0;
             }
 
-            #add-annotations-button,
-            .delete-category-icon {
+            #add-annotations-button {
                 display: none;
             }
             #float-add-annotation-button {
@@ -51,8 +51,6 @@ export const Header = styled.header`
             flex-direction: column;
             gap: ${theme.spacings.small};
             align-items: baseline;
-
-        
         }
     `}
 `;

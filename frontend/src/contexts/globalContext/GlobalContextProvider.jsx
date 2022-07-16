@@ -3,12 +3,14 @@ import P from "prop-types";
 
 import { reducer } from "./reducer";
 import { buildActions } from "./buildActions";
-import { defaultState } from "./defaultState";
+import { defaultState } from "./defaultState.ts";
 
 export const GlobalContext = createContext();
 
 export const GlobalContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, defaultState);
+
+
 
     const actions = buildActions(dispatch);
 

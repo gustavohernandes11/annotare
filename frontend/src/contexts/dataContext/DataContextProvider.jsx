@@ -3,7 +3,7 @@ import P from "prop-types";
 
 import { buildActions } from "./buildActions";
 import { reducer } from "./reducer.js";
-import { initialData } from "./initialData";
+import { initialData } from "./initialData.ts";
 
 export const DataContext = createContext();
 

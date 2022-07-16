@@ -18,6 +18,9 @@ export const Container = styled.div`
                 ? `url('#my-cool-gradient')`
                 : "inherit"};
         }
+        #toggle-menu-asibe-bar-button {
+                display: none;
+            }
 
         @media screen and (max-width: ${theme.screens.tablet}) {
             grid-template-columns: 40px 1fr;
@@ -28,6 +31,9 @@ export const Container = styled.div`
                 position: absolute;
                 top: 0;
                 left: 40px;
+            }
+            #toggle-menu-asibe-bar-button {
+                display: block;
             }
         }
         @media screen and (max-width: ${theme.screens.mobileL}) {

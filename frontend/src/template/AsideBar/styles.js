@@ -48,16 +48,16 @@ export const Container = styled.nav`
             }
         }
         @media screen and (max-width: ${theme.screens.mobileL}) {
-            border: 1px solid ${theme.colors.border};
             #toggle-layout-asibe-bar-button {
                 display: none;
             }
+            border: 1px solid ${theme.colors.border};
             > span {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
         }
     `}
 `;

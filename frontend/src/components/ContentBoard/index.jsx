@@ -36,10 +36,8 @@ export const ContentBoard = () => {
                 style={{
                     gridTemplateColumns:
                         globalState.activeLayout === "grid"
-                            ? "repeat(auto-fill, minmax(280px, 1fr))"
+                            ? "repeat(auto-fill, minmax(200px, 1fr))"
                             : "1fr",
-                    gridTemplateRows:
-                        globalState.activeLayout === "grid" ? "300px" : "1fr",
                 }}
             >
                 {filteredAnnotations?.map((annotation) => (
