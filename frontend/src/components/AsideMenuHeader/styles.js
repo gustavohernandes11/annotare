@@ -7,5 +7,6 @@ export const Header = styled.header`
         justify-content: space-between;
         align-items: center;
         margin-bottom: ${theme.spacings.medium};
+        gap: ${theme.spacings.small};
     `}
 `;

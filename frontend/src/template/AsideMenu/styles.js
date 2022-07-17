@@ -12,15 +12,14 @@ export const Container = styled.aside`
         overflow-y: auto;
         height: 100vh;
         max-width: 250px;
+        min-width: 200px;
 
         box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.1);
 
         @media screen and (max-width: ${theme.screens.laptop}) {
             padding-top: ${theme.spacings.small};
-        padding-inline: ${theme.spacings.medium};
-        z-index: 100;
-
+            padding-inline: ${theme.spacings.medium};
+            z-index: 100;
         }
-       
     `}
 `;

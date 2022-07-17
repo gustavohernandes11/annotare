@@ -34,6 +34,7 @@ export const Header = styled.header`
             h1,
             h2 {
                 font-size: 1.4rem;
+                overflow-wrap: anywhere;
             }
             .search-and-button-span {
                 gap: 0;
