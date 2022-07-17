@@ -28,7 +28,7 @@ export const Card = ({
                 activeLayout={globalState.activeLayout}
                 isViewMode={isViewMode}
                 color={color}
-                onMouseEnter={() => setIsActive(() => true)}
+                onMouseOver={() => setIsActive(() => true)}
                 onMouseLeave={() => setIsActive(() => false)}
             >
                 <CardHeader>

@@ -32,7 +32,12 @@ export const CardFooter = ({ children, isActive, data, isViewMode }) => {
 
     return (
         <Styled.Container
-            style={{ opacity: isActive || isViewMode ? "1" : "0" }}
+            style={{
+                opacity:
+                    isActive || isViewMode || window.screen.width < 768
+                        ? "1"
+                        : "0",
+            }}
         >
             <span>{children}</span>
             <span>
