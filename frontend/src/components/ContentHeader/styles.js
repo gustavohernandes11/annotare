@@ -7,6 +7,7 @@ export const Header = styled.header`
         justify-content: space-between;
         align-items: center;
         color: ${theme.colors.primary};
+        gap: ${theme.spacings.small};
 
         .search-and-button-span {
             display: flex;
@@ -16,7 +17,7 @@ export const Header = styled.header`
 
         .delete-category-icon {
             border: none;
-            background-color: ${theme.colors.backgroundPrimary};
+            background: transparent;
             margin-bottom: 0;
             margin-right: ${theme.spacings.medium};
             path {
