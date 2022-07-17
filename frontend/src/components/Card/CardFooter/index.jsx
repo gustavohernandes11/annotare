@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { useState } from "react";
 import * as Styled from "./styles.js";
 import P from "prop-types";
 import { IconButton } from "../../IconButton/index.jsx";
@@ -6,6 +7,7 @@ import { Expand, TrashAlt, PencilAlt } from "@styled-icons/fa-solid";
 import { useDataContext } from "../../../hooks/useDataContext.jsx";
 import { useGlobalContext } from "../../../hooks/useGlobalContext.jsx";
 import { toast } from "react-toastify";
+import { Popover } from "./../../Popover/index";
 
 const sizeProps = {
     widht: 15,
@@ -15,6 +17,7 @@ const sizeProps = {
 export const CardFooter = ({ children, isActive, data, isViewMode }) => {
     const [dataState, dataActions] = useDataContext();
     const [globalState, globalActions] = useGlobalContext();
+    const [isRemoveCardActive, setisRemoveCardActive] = useState(false);
 
     const handleEdit = () => {
         globalActions.setSelectedAnnotation(data);
@@ -31,24 +34,34 @@ export const CardFooter = ({ children, isActive, data, isViewMode }) => {
     };
 
     return (
-        <Styled.Container
-            style={{
-                opacity:
-                    isActive || isViewMode || window.screen.width < 768
-                        ? "1"
-                        : "0",
-            }}
-        >
-            <span>{children}</span>
-            <span>
-                <IconButton onClick={handleRemove}>
-                    <TrashAlt {...sizeProps} />
-                </IconButton>
-                <IconButton onClick={handleEdit}>
-                    <PencilAlt {...sizeProps} />
-                </IconButton>
-            </span>
-        </Styled.Container>
+        <>
+            {isRemoveCardActive && (
+                <Popover
+                    mensage={`Deletar anotação?`}
+                    heading={null}
+                    acceptFunction={handleRemove}
+                    cancelFunction={() => setisRemoveCardActive(false)}
+                />
+            )}
+            <Styled.Container
+                style={{
+                    opacity:
+                        isActive || isViewMode || window.screen.width < 768
+                            ? "1"
+                            : "0",
+                }}
+            >
+                <span>{children}</span>
+                <span>
+                    <IconButton onClick={() => setisRemoveCardActive(true)}>
+                        <TrashAlt {...sizeProps} />
+                    </IconButton>
+                    <IconButton onClick={handleEdit}>
+                        <PencilAlt {...sizeProps} />
+                    </IconButton>
+                </span>
+            </Styled.Container>
+        </>
     );
 };
 

@@ -9,10 +9,7 @@ export const Container = styled.div`
         flex-direction: column;
         gap: ${theme.spacings.medium};
         z-index: 101;
-        width: 30%;
         left: 50%;
-        min-width: 400px;
-        min-height: 200px;
 
         text-align: center;
         background: ${theme.colors.backgroundPrimary};

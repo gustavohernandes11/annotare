@@ -17,7 +17,7 @@ export const ContentHeader = () => {
     const [globalState, globalActions] = useGlobalContext();
     // eslint-disable-next-line no-unused-vars
     const [dataState, dataActions] = useDataContext();
-    const [isPopoverActive, setIsPopoverActive] = useState();
+    const [isRemoveCategoryActive, setisRemoveCategoryActive] = useState();
 
     const handleAddNote = () => {
         globalActions.setEditMode(true);
@@ -27,7 +27,7 @@ export const ContentHeader = () => {
         try {
             await dataActions.removeCategory(globalState.selectedCategory);
             globalActions.setSelectedCategory(null);
-            setIsPopoverActive(false);
+            setisRemoveCategoryActive(false);
             toast.success("Categoria deletada.");
         } catch (e) {
             toast.error("Houve um erro inesperado!");
@@ -42,12 +42,12 @@ export const ContentHeader = () => {
             >
                 <Plus width={20} height={20} />
             </FloatButton>
-            {isPopoverActive && (
+            {isRemoveCategoryActive && (
                 <Popover
                     mensage={`Você tem certeza que deseja excluir a
                      categoria "${globalState.selectedCategory}" e todas suas anotações relacionadas?`}
                     acceptFunction={handleAccept}
-                    cancelFunction={() => setIsPopoverActive(false)}
+                    cancelFunction={() => setisRemoveCategoryActive(false)}
                 />
             )}
             <span>
@@ -63,7 +63,7 @@ export const ContentHeader = () => {
                 <span>
                     {globalState.selectedCategory !== null && (
                         <IconButton
-                            onClick={() => setIsPopoverActive(true)}
+                            onClick={() => setisRemoveCategoryActive(true)}
                             className="delete-category-icon"
                         >
                             <TrashAlt width={20} height={20} />
