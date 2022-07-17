@@ -13,13 +13,14 @@ export const Container = styled.div`
             : theme.colors.backgroundPrimary};
 
         overflow-y: auto;
-        height: 100vh;
+        height: 100%;
+
 
         @media screen and (max-width: ${theme.screens.laptop}) {
             padding-inline: ${theme.spacings.medium};
         }
         @media screen and (max-width: ${theme.screens.mobileL}) {
-            height: calc(100vh - 40px);
+            height: calc(100vh - 60px);
         }
     `}
 `;
