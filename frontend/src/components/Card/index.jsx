@@ -5,7 +5,7 @@ import P from "prop-types";
 import { CardFooter } from "./CardFooter";
 import { CardBody } from "./CardBody";
 import { CardHeader } from "./CardHeader";
-import { Expand } from "@styled-icons/fa-solid";
+import { Expand, ArrowLeft } from "@styled-icons/fa-solid";
 import { IconButton } from "./../IconButton/index";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 
@@ -44,9 +44,15 @@ export const Card = ({
                     isActive={isActive}
                     isViewMode={isViewMode}
                 >
-                    <IconButton onClick={() => setIsViewMode(!isViewMode)}>
-                        <Expand width={15} height={15} />
-                    </IconButton>
+                    {isViewMode ? (
+                        <IconButton onClick={() => setIsViewMode(!isViewMode)}>
+                            <ArrowLeft width={15} height={15} />
+                        </IconButton>
+                    ) : (
+                        <IconButton onClick={() => setIsViewMode(!isViewMode)}>
+                            <Expand width={15} height={15} />
+                        </IconButton>
+                    )}
                 </CardFooter>
             </Styled.Container>
         </>
