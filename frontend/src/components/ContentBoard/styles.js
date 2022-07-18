@@ -17,6 +17,9 @@ export const Container = styled.main`
         @media screen and (max-width: ${theme.screens.mobileL}) {
             grid-template-rows: 1fr;
             grid-template-columns: 1fr;
+
+            padding-top: ${theme.spacings.medium};
+            padding-bottom: ${theme.spacings.medium};
         }
     `}
 `;

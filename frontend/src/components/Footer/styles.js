@@ -6,7 +6,6 @@ export const Container = styled.footer`
         flex-direction: row;
         border-top: 1px solid ${theme.colors.border};
         color: ${theme.colors.grey};
-        padding: ${theme.spacings.xlarge};
         font-size: ${theme.sizes.small};
         align-items: center;
         justify-content: space-between;

@@ -21,7 +21,6 @@ export const reducer = (state, action) => {
             return { ...state, editMode: action.payload };
 
         case "SET_THEME":
-            console.log("set layout");
 
             return { ...state, activeTheme: action.payload };
 
@@ -51,7 +50,6 @@ export const reducer = (state, action) => {
                 localStorage.setItem("storagedLayout", "list");
                 newLayout = "list";
             }
-            console.log("change layout"+ newLayout);
             return { ...state, activeLayout: newLayout };
 
         default:
