@@ -8,8 +8,7 @@ export const Container = styled.div`
         justify-content: space-around;
         flex-direction: column;
         gap: ${theme.spacings.medium};
-        z-index: 101;
-        left: 50%;
+        z-index: 110;
 
         text-align: center;
         background: ${theme.colors.backgroundPrimary};
@@ -17,26 +16,23 @@ export const Container = styled.div`
         color: ${theme.colors.primary};
         padding: ${theme.spacings.xlarge};
         box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.1);
-
         border-radius: 5px;
-        top: 30%;
-        left: 50%;
+        top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
         > span {
             display: flex;
             gap: ${theme.spacings.xsmall};
         }
 
-        @media screen and (max-width: ${theme.screens.laptop}) {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        
     `}
 `;
 
 export const ClickAway = styled.div`
     ${({ theme }) => css`
-        z-index: 5;
+        z-index: 105;
         position: fixed;
         top: 0;
         left: 0;

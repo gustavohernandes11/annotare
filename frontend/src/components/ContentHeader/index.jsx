@@ -36,12 +36,6 @@ export const ContentHeader = () => {
 
     return (
         <Styled.Header>
-            <FloatButton
-                onClick={handleAddNote}
-                id="float-add-annotation-button"
-            >
-                <Plus width={20} height={20} />
-            </FloatButton>
             {isRemoveCategoryActive && (
                 <Popover
                     mensage={`Você tem certeza que deseja excluir a
@@ -50,6 +44,12 @@ export const ContentHeader = () => {
                     cancelFunction={() => setisRemoveCategoryActive(false)}
                 />
             )}
+            <FloatButton
+                onClick={handleAddNote}
+                id="float-add-annotation-button"
+            >
+                <Plus width={20} height={20} />
+            </FloatButton>
             <span>
                 <Heading>{globalState.selectedCategory || "Todas"}</Heading>
 
