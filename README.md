@@ -72,14 +72,12 @@ Inicie o servidor
 
 ## Aprendizados
 
-Nesse projeto, consegui desenvolver habilidades mais complexas com React: como por exemplo
-controlar o estado global da aplicação de forma intuitiva com useContext juntamente ao useReducer em detrimento ao Redux. Portanto com 
+Nesse projeto, desenvolvi habilidades mais complexas com React: como, por exemplo,
+controlar o estado global da aplicação de forma intuitiva com useContext, juntamente ao useReducer em detrimento ao Redux. Portanto foi dado
 preferência ao código mais puro do React.
 
- Ademais, o modo de codificar não foi apenas 
-para implementar as funcionalidades, mas para que, caso mais desenvolvedores fossem continuar o desenvolvimento encontrassem um codigo limpo e organizado.
+Tive meu primeiro contato com Typescript - que usaria a partir de agora nos próximos projetos -, uma maior experiência com styled-components, tratamento de dados no _Frontend_, responsividade e versionamento de código.
 
-Por fim, também tive o primeiro contato com o Typescript, que usarei apartir de agora sempre que possível. Uma maior experiência com o styled-components, persistência de dados simples no frontend, reponsividade e versionamento de código.
 
 ## Licença
 
