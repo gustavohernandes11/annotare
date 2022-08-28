@@ -8,8 +8,7 @@ import { useDataContext } from "../../hooks/useDataContext.jsx";
 import { toast } from "react-toastify";
 
 export const AddCategoryForm = () => {
-    // eslint-disable-next-line no-unused-vars
-    const [globalState, globalActions] = useGlobalContext();
+    const [ , globalActions] = useGlobalContext();
     const [dataState, dataActions] = useDataContext();
     const [inputName, setInputName] = useState("");
 
