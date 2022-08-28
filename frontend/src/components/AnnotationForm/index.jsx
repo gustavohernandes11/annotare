@@ -122,7 +122,7 @@ export const AnnotationForm = () => {
             <label htmlFor="note-content">Mensagem</label>
             <span>
                 <Input
-                    height="200px"
+                    height="100px"
                     maxLength="999"
                     name="note-content"
                     as="textarea"
