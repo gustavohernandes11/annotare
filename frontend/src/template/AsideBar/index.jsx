@@ -2,6 +2,7 @@ import * as Styled from "./styles.js";
 
 import { IconButton } from "../../components/IconButton/index.jsx";
 import { useGlobalContext } from "./../../hooks/useGlobalContext";
+import { SearchInput } from '../../components/SearchInput';
 
 import { Moon, Lightbulb } from "@styled-icons/fa-regular";
 import { Th, ThList, Rainbow, Stream } from "@styled-icons/fa-solid";
@@ -31,6 +32,12 @@ export const AsideBar = () => {
                 </IconButton>
             </span>
             <span>
+            {window.screen.width < 425 && ( <SearchInput
+                    id="search-input"
+                    onChange={(e) =>
+                        globalActions.setSearchInputValue(e.target.value)
+                    }
+                />)}
                 <IconButton
                     id="toggle-layout-asibe-bar-button"
                     onClick={() => globalActions.changeLayout()}

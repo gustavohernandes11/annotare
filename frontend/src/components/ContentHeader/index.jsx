@@ -70,12 +70,12 @@ export const ContentHeader = () => {
                         </IconButton>
                     )}
                 </span>
-                <SearchInput
+                {window.screen.width > 425 && ( <SearchInput
                     id="search-input"
                     onChange={(e) =>
                         globalActions.setSearchInputValue(e.target.value)
                     }
-                />
+                />)}
 
                 <LargeButton
                     id="add-annotations-button"

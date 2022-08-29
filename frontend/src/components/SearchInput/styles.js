@@ -33,5 +33,10 @@ export const Container = styled.div`
         > button {
             margin: ${theme.spacings.xsmall};
         }
+        @media screen and (max-width: ${theme.screens.mobileL}) {
+            background: inherit;
+            border: none;
+            box-shadow: none;
+        }
     `}
 `;
