@@ -16,6 +16,9 @@ export const Container = styled.nav`
             ? `${theme.colors.secondary}`
             : `${theme.colors.backgroundSecondary}`};
 
+        #toggle-menu-asibe-bar-button svg{
+            color: ${theme.colors.secondary};
+        }
         img {
             width: 90%;
         }

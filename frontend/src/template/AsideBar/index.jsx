@@ -18,18 +18,6 @@ export const AsideBar = () => {
         <Styled.Container id="asidebar">
             <span>
                 <h1>.N</h1>
-                <hr />
-
-                <IconButton
-                    id="toggle-menu-asibe-bar-button"
-                    onClick={() =>
-                        globalActions.setIsAsideMenuOpen(
-                            !globalState.isAsideMenuOpen
-                        )
-                    }
-                >
-                    <Stream title="Open Menu" {...sizes} />
-                </IconButton>
             </span>
             <span>
             {window.screen.width < 425 && ( <SearchInput
@@ -61,6 +49,16 @@ export const AsideBar = () => {
                     {globalState.activeTheme === "rainbow" && (
                         <Moon {...sizes} />
                     )}
+                </IconButton>
+                <IconButton
+                    id="toggle-menu-asibe-bar-button"
+                    onClick={() =>
+                        globalActions.setIsAsideMenuOpen(
+                            !globalState.isAsideMenuOpen
+                        )
+                    }
+                >
+                    <Stream title="Open Menu" {...sizes} />
                 </IconButton>
             </span>
         </Styled.Container>

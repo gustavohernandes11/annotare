@@ -7,16 +7,13 @@ export const Footer = () => {
     return (
         <Styled.Container>
             <p>Criado por Gustavo Hernandes.</p>
-            <span>
-                <p>Ver o código no Github</p>
-                <IconButton
-                    target="_blank"
-                    as={"a"}
-                    href="https://github.com/gustavohernandes11/annotare"
-                >
-                    <Github widht={30} height={30} />
-                </IconButton>
-            </span>
+            <IconButton
+                target="_blank"
+                as={"a"}
+                href="https://github.com/gustavohernandes11/annotare"
+            >
+                <Github widht={30} height={30} />
+            </IconButton>
         </Styled.Container>
     );
 };

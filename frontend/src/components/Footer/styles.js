@@ -24,9 +24,11 @@ export const Container = styled.footer`
             align-items: center;
         }
         @media screen and (max-width: ${theme.screens.laptop}) {
-            flex-direction: column;
             gap: ${theme.spacings.medium};
             padding: ${theme.spacings.medium};
+        }
+         @media screen and (max-width: ${theme.screens.mobileL}) {
+            padding-inline: 0;
         }
     `}
 `;
