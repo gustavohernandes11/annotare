@@ -19,7 +19,7 @@ export const Container = styled.aside`
         @media screen and (max-width: ${theme.screens.laptop}) {
             padding-top: ${theme.spacings.small};
             padding-inline: ${theme.spacings.medium};
-            z-index: 100;
+            z-index: 105;
         }
     `}
 `;
