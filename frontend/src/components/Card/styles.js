@@ -1,12 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-    ${({
-        theme,
-        color = theme.colors.secondary,
-        isViewMode,
-        activeLayout,
-    }) => css`
+    ${({ theme, isViewMode, activeLayout }) => css`
         display: grid;
         grid-template-rows: 40px 1fr 40px;
         background-color: ${theme.colors.backgroundTertiary};
@@ -22,7 +17,7 @@ export const Container = styled.div`
         min-height: ${activeLayout === "grid" ? "300px" : "none"};
 
         position: ${isViewMode ? "absolute" : "inherit"};
-        z-index: ${isViewMode ? "99" : "inherit"};
+        z-index: ${isViewMode ? "110" : "inherit"};
         top: ${isViewMode ? "50%" : "inherit"};
         width: ${isViewMode ? "60%" : "inherit"};
         height: ${isViewMode ? "80%" : "inherit"};
@@ -33,13 +28,12 @@ export const Container = styled.div`
         transform: ${isViewMode ? "translateY(-50%)" : "inherit"};
 
         @media screen and (max-width: ${theme.screens.mobileL}) {
-        width: ${isViewMode ? "95%" : "inherit"};
-        height: ${isViewMode ? "90%" : "inherit"};
-        transform: ${isViewMode ? "translateY(calc(-50% + 20px))" : "inherit"};
-        padding: ${isViewMode ? theme.spacings.small : "none"};
-
-            
-
+            width: ${isViewMode ? "95%" : "inherit"};
+            height: ${isViewMode ? "90%" : "inherit"};
+            transform: ${isViewMode
+                ? "translateY(calc(-50% + 20px))"
+                : "inherit"};
+            padding: ${isViewMode ? theme.spacings.small : "none"};
         }
     `}
 `;

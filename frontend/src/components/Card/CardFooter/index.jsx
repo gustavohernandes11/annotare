@@ -3,7 +3,7 @@ import { useState } from "react";
 import * as Styled from "./styles.js";
 import P from "prop-types";
 import { IconButton } from "../../IconButton/index.jsx";
-import { Expand, TrashAlt, PencilAlt } from "@styled-icons/fa-solid";
+import { TrashAlt, PencilAlt } from "@styled-icons/fa-solid";
 import { useDataContext } from "../../../hooks/useDataContext.jsx";
 import { useGlobalContext } from "../../../hooks/useGlobalContext.jsx";
 import { toast } from "react-toastify";

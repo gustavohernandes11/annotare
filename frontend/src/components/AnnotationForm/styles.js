@@ -25,13 +25,11 @@ export const Form = styled.form`
                 border: 1px solid ${theme.colors.border};
                 border-radius: ${theme.spacings.xsmall};
                 background-color: ${theme.colors.backgroundPrimary};
-                resize: none;
+                resize: vertical;
                 font-family: inherit;
                 font-size: medium;
                 padding: ${theme.spacings.small};
             }
         }
-        
-        
     `}
 `;

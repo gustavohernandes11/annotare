@@ -35,7 +35,10 @@ export const Card = ({
                     <span>{category}</span>
                     <span>{createdAt}</span>
                 </CardHeader>
-                <CardBody isViewMode={isViewMode}>
+                <CardBody
+                    onClick={() => setIsViewMode(true)}
+                    isViewMode={isViewMode}
+                >
                     {heading && <h3>{heading}</h3>}
                     <p>{children}</p>
                 </CardBody>

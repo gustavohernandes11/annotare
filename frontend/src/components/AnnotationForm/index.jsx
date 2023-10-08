@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import * as Styled from "./styles.js";
 import { Input } from "../Input";
 import { Button } from "../Button";
-// import P from 'prop-types'
 import { useDataContext } from "../../hooks/useDataContext.jsx";
 import { useGlobalContext } from "../../hooks/useGlobalContext.jsx";
 import { toast } from "react-toastify";

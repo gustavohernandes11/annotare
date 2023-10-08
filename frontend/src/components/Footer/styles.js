@@ -24,10 +24,14 @@ export const Container = styled.footer`
             align-items: center;
         }
         @media screen and (max-width: ${theme.screens.laptop}) {
-            gap: ${theme.spacings.medium};
-            padding: ${theme.spacings.medium};
+            display: block;
+            gap: 1rem;
+
+            p {
+                margin-bottom: 1rem;
+            }
         }
-         @media screen and (max-width: ${theme.screens.mobileL}) {
+        @media screen and (max-width: ${theme.screens.mobileL}) {
             padding-inline: 0;
         }
     `}

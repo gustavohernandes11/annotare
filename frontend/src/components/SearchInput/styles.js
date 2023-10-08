@@ -15,13 +15,12 @@ export const Container = styled.div`
         }
 
         > input {
-            border: none;
             padding: ${theme.spacings.small};
             width: 140px;
             background-color: transparent;
-            border: none;
             margin-right: ${theme.spacings.small};
             color: ${theme.colors.primary};
+            border: none;
         }
         > input:focus {
             outline: none;
@@ -32,10 +31,10 @@ export const Container = styled.div`
         }
         > button {
             margin: ${theme.spacings.xsmall};
+            border-right: 1px solid ${theme.colors.border};
         }
         @media screen and (max-width: ${theme.screens.mobileL}) {
             background: inherit;
-            border: none;
             box-shadow: none;
         }
     `}
