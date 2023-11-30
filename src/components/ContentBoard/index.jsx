@@ -36,7 +36,11 @@ export const ContentBoard = () => {
                 style={{
                     gridTemplateColumns:
                         globalState.activeLayout === "grid"
-                            ? "repeat(auto-fill, minmax(200px, 1fr))"
+                            ? "repeat(auto-fill, minmax(15rem, 1fr))"
+                            : "1fr",
+                    gridTemplateRows:
+                        globalState.activeLayout === "grid"
+                            ? "repeat(auto-fill, minmax(15rem, 1fr))"
                             : "1fr",
                 }}
             >

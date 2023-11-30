@@ -14,7 +14,7 @@ export const Container = styled.div`
         transition: transform 0.3s 0s ease-in-out;
         box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.1);
 
-        min-height: ${activeLayout === "grid" ? "300px" : "none"};
+        /* min-height: ${activeLayout === "grid" ? "300px" : "none"}; */
 
         position: ${isViewMode ? "absolute" : "inherit"};
         z-index: ${isViewMode ? "110" : "inherit"};

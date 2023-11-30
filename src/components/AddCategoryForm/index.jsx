@@ -8,12 +8,13 @@ import { useDataContext } from "../../hooks/useDataContext.jsx";
 import { toast } from "react-toastify";
 
 export const AddCategoryForm = () => {
-    const [ , globalActions] = useGlobalContext();
+    const [, globalActions] = useGlobalContext();
     const [dataState, dataActions] = useDataContext();
     const [inputName, setInputName] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (inputName === "") return;
         const repeatedNames = dataState.categories.filter(
             (e) => e.name === inputName.trim()
         );
